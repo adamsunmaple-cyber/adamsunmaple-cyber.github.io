@@ -114,7 +114,71 @@
     font-size: 12px;
     white-space: nowrap;
 }
+.amazon-region-title {
+    margin: 4px 0 8px;
+    color: #776b5e;
+    font-size: 12px;
+}
 
+.amazon-regions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+}
+
+.region-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 5px;
+    border: 1px solid #ded4c5;
+    border-radius: 5px;
+    color: #493826;
+    background: #fffdf9;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.region-button:hover {
+    background: #eee4d5;
+}
+
+.other-stores {
+    margin-top: 12px;
+}
+
+.other-stores summary {
+    padding: 10px 12px;
+    border: 1px solid #cdbda8;
+    border-radius: 5px;
+    color: #493826;
+    background: #f8f3eb;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.other-store-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.other-store-link {
+    padding: 7px 10px;
+    border: 1px solid #ded4c5;
+    border-radius: 20px;
+    color: #7b5428;
+    background: #fffdf9;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.other-store-link:hover {
+    background: #eee4d5;
+}
 .review-note {
     margin-top: 18px;
     color: #6c6257;
@@ -349,7 +413,9 @@ header h1 span {
             header h1 {
                 font-size: 34px;
             }
-
+   .amazon-regions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
             .book {
                 grid-template-columns: 1fr;
             }
@@ -483,144 +549,159 @@ header h1 span {
         </div>
         </article>
 
-        <article class="purchase-card print-card">
-            <div class="category-label">PRINT EDITIONS</div>
+   <article class="purchase-card print-card">
+    <div class="category-label">PRINT EDITIONS</div>
 
-            <h5>纸质书</h5>
+    <h5>纸质书</h5>
 
-            <p>
-                可通过多个国际图书销售平台订购实体版本。
-            </p>
+    <p>
+        可通过 Amazon 及多个国际图书销售平台订购实体版本。
+    </p>
 
-            <div class="store-links">
+    <div class="store-links">
+        <a
+            class="store-button"
+            href="https://mybook.to/9e2t"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="store-name">Amazon 全球购买</span>
+            <span class="store-format">自动选择地区</span>
+        </a>
 
-                <a
-                    class="store-button"
-                    href="https://www.amazon.ca/dp/1067568700"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <span class="store-name">🇨🇦 Amazon Canada</span>
-                    <span class="store-format">纸书</span>
-                </a>
-                
-                <a
-                    class="store-button"
-                    href="https://www.amazon.com/dp/1067568700"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <span class="store-name">🇺🇸 Amazon US</span>
-                    <span class="store-format">纸书</span>
-                </a>
-                
-                <a
-                    class="store-button"
-                    href="https://www.amazon.co.uk/dp/1067568700"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <span class="store-name">🇬🇧 Amazon UK</span>
-                    <span class="store-format">纸书</span>
-                </a>
-                
-                <a
-                    class="store-button"
-                    href="https://www.amazon.com.au/dp/1067568700"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <span class="store-name">🇦🇺 Amazon Australia</span>
-                    <span class="store-format">纸书</span>
-                </a>
-                <a
-    class="store-button"
-    href="https://www.amazon.co.jp/dp/1067568700"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    <span class="store-name">🇯🇵 Amazon Japan</span>
-    <span class="store-format">纸书</span>
-</a>
+        <p class="amazon-region-title">
+            或直接选择 Amazon 地区：
+        </p>
 
-<a
-    class="store-button"
-    href="https://www.amazon.es/dp/1067568700"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    <span class="store-name">🇪🇸 Amazon Spain</span>
-    <span class="store-format">纸书</span>
-</a>
+        <div class="amazon-regions">
+            <a
+                class="region-button"
+                href="https://www.amazon.ca/dp/1067568700"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Amazon Canada"
+            >
+                <span>🇨🇦</span>
+                <span>加拿大</span>
+            </a>
+
+            <a
+                class="region-button"
+                href="https://www.amazon.com/dp/1067568700"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Amazon United States"
+            >
+                <span>🇺🇸</span>
+                <span>美国</span>
+            </a>
+
+            <a
+                class="region-button"
+                href="https://www.amazon.co.uk/dp/1067568700"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Amazon United Kingdom"
+            >
+                <span>🇬🇧</span>
+                <span>英国</span>
+            </a>
+
+            <a
+                class="region-button"
+                href="https://www.amazon.com.au/dp/1067568700"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Amazon Australia"
+            >
+                <span>🇦🇺</span>
+                <span>澳洲</span>
+            </a>
+
+            <a
+                class="region-button"
+                href="https://www.amazon.co.jp/dp/1067568700"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Amazon Japan"
+            >
+                <span>🇯🇵</span>
+                <span>日本</span>
+            </a>
+
+            <a
+                class="region-button"
+                href="https://www.amazon.es/dp/1067568700"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Amazon Spain"
+            >
+                <span>🇪🇸</span>
+                <span>西班牙</span>
+            </a>
+        </div>
+
+        <details class="other-stores">
+            <summary>其他国际书店</summary>
+
+            <div class="other-store-list">
                 <a
-                    class="store-button"
+                    class="other-store-link"
                     href="https://www.barnesandnoble.com/s/9781067568702"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <span class="store-name">🇺🇸 Barnes &amp; Noble</span>
-                    <span class="store-format">纸书</span>
+                    Barnes &amp; Noble
                 </a>
 
                 <a
-                    class="store-button"
+                    class="other-store-link"
                     href="https://www.booksamillion.com/p/Xiao-Sun/9781067568702"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <span class="store-name">🇺🇸 Books-A-Million</span>
-                    <span class="store-format">纸书</span>
+                    Books-A-Million
                 </a>
+
                 <a
-                    class="store-button"
+                    class="other-store-link"
                     href="https://www.adlibris.com/sv/bok/-9781067568702"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <span class="store-name">🇸🇪 Adlibris</span>
-                    <span class="store-format">纸书</span>
+                    Adlibris
                 </a>
+
                 <a
-                    class="store-button"
+                    class="other-store-link"
                     href="https://www.strandbooks.com/32599-39532-20043-36335-65306-20174-31070-35805-36215-28304-21040-20849-21644-22269-30340-23835-36215-9781067568702.html"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <span class="store-name">🇺🇸 Strand Books</span>
-                    <span class="store-format">纸书</span>
+                    Strand Books
                 </a>
+
                 <a
-                    class="store-button"
+                    class="other-store-link"
                     href="https://www.donner.nl/en/search/?keywords=9781067568702"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <span class="store-name">🇳🇱 Donner</span>
-                    <span class="store-format">纸书</span>
+                    Donner
                 </a>
-                                <a
-                    class="store-button"
+
+                <a
+                    class="other-store-link"
                     href="https://www.yes24.com/product/goods/194406275"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <span class="store-name">🇰🇷 Yes24</span>
-                    <span class="store-format">纸书</span>
+                    Yes24
                 </a>
-          
-                    <a
-                        class="store-button"
-                        href="https://mybook.to/9e2t"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                   <span class="store-name">🌐 其他地区</span>
-                    <span class="store-format"></span>
-                 
-                    </a>
             </div>
-            
-        </article>
+        </details>
+    </div>
+</article>
 
         <article class="purchase-card review-card">
             <div class="category-label">REVIEWS</div>
