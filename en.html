@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Adam Sun | History Author | The Birth of Rome</title>
+
+    <meta
+        name="description"
+        content="Official author website of Adam Sun, author of The Birth of Rome: From Myth to the Rise of the Republic."
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+            color: #26231f;
+            background: #f4f0e8;
+            line-height: 1.7;
+        }
+
+        header {
+            position: relative;
+            display: flex;
+            min-height: 260px;
+            align-items: center;
+            justify-content: center;
+            padding: 56px 20px;
+            overflow: hidden;
+            color: #fffaf2;
+            text-align: center;
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(169, 126, 70, 0.28),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    135deg,
+                    #17120e 0%,
+                    #3d2e20 55%,
+                    #211812 100%
+                );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+        }
+
+        .hero-kicker {
+            margin: 0 0 10px;
+            color: #d4b27c;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 52px;
+            letter-spacing: 3px;
+        }
+
+        .hero-description {
+            margin: 12px 0 0;
+            color: #e4d8c8;
+            font-size: 18px;
+        }
+
+        nav {
+            padding: 14px;
+            background: #29231d;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 14px;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        h2 {
+            padding-bottom: 10px;
+            border-bottom: 2px solid #9a7745;
+            color: #493826;
+        }
+
+        .book {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 44px;
+            align-items: start;
+        }
+
+        .book-cover {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+        }
+
+        .coming-label {
+            display: inline-block;
+            margin-bottom: 12px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            background: #493826;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .book-title {
+            margin: 0 0 2px;
+            color: #33281d;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 32px;
+        }
+
+        .book-subtitle {
+            margin: 0 0 24px;
+            color: #776b5e;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 19px;
+            font-style: italic;
+        }
+
+        .book-description p {
+            margin: 0 0 16px;
+        }
+
+        .coming-message {
+            margin-top: 28px;
+            padding: 18px 20px;
+            border-left: 4px solid #9a7745;
+            background: #ebe4d7;
+        }
+
+        .coming-message strong {
+            display: block;
+            margin-bottom: 3px;
+            color: #493826;
+            font-size: 18px;
+        }
+
+        .about-author {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 36px;
+            align-items: start;
+        }
+
+        .author-photo {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            border-radius: 8px;
+            object-fit: cover;
+            object-position: center top;
+            box-shadow: 0 10px 28px rgba(40, 30, 20, 0.2);
+        }
+
+        .author-name {
+            margin: 0 0 12px;
+            color: #33281d;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+        }
+
+        .author-credentials {
+            margin-bottom: 18px;
+            color: #8a6a42;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-link {
+            color: #7b5428;
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 30px 20px;
+            color: #ddd;
+            background: #29231d;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                min-height: 220px;
+            }
+
+            header h1 {
+                font-size: 38px;
+            }
+
+            .book {
+                grid-template-columns: 1fr;
+            }
+
+            .book-cover {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .about-author {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .author-photo {
+                width: 180px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5RZG534RE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K5RZG534RE');
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="hero-content">
+            <p class="hero-kicker">HISTORY · ROME · CIVILIZATION</p>
+            <h1>Adam Sun</h1>
+            <p class="hero-description">
+                History writer · Author of <em>The Birth of Rome</em>
+            </p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#book">Book</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="book">
+            <h2>Book</h2>
+
+            <div class="book">
+                <img
+                    class="book-cover"
+                    src="tborfrontcover.jpg"
+                    alt="The Birth of Rome: From Myth to the Rise of the Republic book cover"
+                >
+
+                <div class="book-description">
+                    <span class="coming-label">COMING IN 2027</span>
+
+                    <h3 class="book-title">The Birth of Rome</h3>
+                    <p class="book-subtitle">
+                        From Myth to the Rise of the Republic
+                    </p>
+
+                    <p>
+                        How did a small settlement beside the Tiber grow into a power
+                        that would shape Western civilization and change the course of history?
+                    </p>
+
+                    <p>
+                        <em>The Birth of Rome</em> begins with the legendary world of
+                        Aeneas, Romulus and Remus, and the founding of the city. It then
+                        follows Rome through the age of its seven kings, the overthrow of
+                        the monarchy, the creation of the Republic, the struggle between
+                        patricians and plebeians, and the wars that transformed Rome into
+                        the dominant power of the Italian peninsula.
+                    </p>
+
+                    <p>
+                        Drawing on ancient sources and modern scholarship, the book
+                        presents the wars, reforms, beliefs, institutions, and political
+                        conflicts of early Rome in a clear narrative for general readers.
+                        At its heart is a larger question: why, among the many peoples and
+                        cities of ancient Italy, was it Rome that ultimately rose?
+                    </p>
+
+                    <p>
+                        This is not only a history of Rome's beginnings, but a journey from
+                        myth into history, and from a small community into a republic.
+                    </p>
+
+                    <div class="coming-message">
+                        <strong>English Edition Coming in 2027</strong>
+                        Publication details and availability will be announced closer to release.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About the Author</h2>
+
+            <div class="about-author">
+                <img
+                    class="author-photo"
+                    src="author.jpg"
+                    alt="Adam Sun author portrait"
+                >
+
+                <div>
+                    <h3 class="author-name">Adam Sun</h3>
+
+                    <p class="author-credentials">
+                        HISTORY WRITER · SOFTWARE ENGINEER · EDUCATION FOUNDER
+                    </p>
+
+                    <p>
+                        Adam Sun is a history writer based in Canada. He graduated from the
+                        University of Alberta with a degree in Computer Science and a minor
+                        in History. Although his academic and professional work has focused
+                        primarily on technology, he has maintained a long-standing interest
+                        in ancient Greece, Rome, and the civilizations of the Mediterranean.
+                    </p>
+
+                    <p>
+                        In 2019, he travelled with a University of Alberta professor through
+                        Sicily and Greece, visiting a number of ancient sites. The journey
+                        inspired him to begin organizing his research on early Roman history.
+                        What started as travel and study notes gradually developed into a
+                        narrative history for general readers, tracing Rome's path from
+                        legendary origins to the rise of the Republic.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+
+            <p>
+                For publishing inquiries, media requests, or other professional contact:
+                <a class="contact-link" href="mailto:adamsunmaple@gmail.com">
+                    adamsunmaple@gmail.com
+                </a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Adam Sun. All rights reserved.</p>
+    </footer>
+</body>
+</html>
