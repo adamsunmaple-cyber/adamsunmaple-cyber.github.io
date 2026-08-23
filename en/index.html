@@ -16,6 +16,130 @@
             box-sizing: border-box;
         }
 
+
+
+        /* Purchase / review placeholders */
+        .purchase-section {
+            margin-top: 34px;
+        }
+
+        .purchase-section h4 {
+            margin: 0 0 16px;
+            color: #493826;
+            font-size: 22px;
+        }
+
+        .purchase-groups {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            align-items: stretch;
+        }
+
+        .purchase-card {
+            display: flex;
+            min-height: 185px;
+            flex-direction: column;
+            padding: 24px;
+            border: 1px solid #ded4c5;
+            border-radius: 8px;
+            background: #fffdf9;
+            box-shadow: 0 6px 18px rgba(55, 42, 28, 0.08);
+        }
+
+        .purchase-card.ebook-card {
+            border-top: 4px solid #755c3d;
+        }
+
+        .purchase-card.print-card {
+            border-top: 4px solid #9a7745;
+        }
+
+        .purchase-card.audio-card {
+            border-top: 4px solid #b28a57;
+        }
+
+        .purchase-card.review-card {
+            border-top: 4px solid #493826;
+        }
+
+        .category-label {
+            margin-bottom: 6px;
+            color: #8a6a42;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .purchase-card h5 {
+            margin: 0 0 8px;
+            color: #33281d;
+            font-size: 21px;
+        }
+
+        .store-links {
+            margin-top: auto;
+        }
+
+        .amazon-region-title {
+            margin: 12px 0 8px;
+            color: #776b5e;
+            font-size: 12px;
+        }
+
+        .amazon-regions {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .region-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 9px 7px;
+            border: 1px solid #ded4c5;
+            border-radius: 5px;
+            color: #493826;
+            background: #fffdf9;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .region-button:hover {
+            background: #eee4d5;
+        }
+
+        .store-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cdbda8;
+            border-radius: 5px;
+            color: #493826;
+            background: #f8f3eb;
+            text-decoration: none;
+        }
+
+        .placeholder-button {
+            cursor: default;
+            opacity: 0.78;
+        }
+
+        .store-name {
+            font-weight: 700;
+        }
+
+        .store-format {
+            color: #7b6e60;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
         body {
             margin: 0;
             font-family:
@@ -214,6 +338,10 @@
         }
 
         @media (max-width: 700px) {
+            .purchase-groups {
+                grid-template-columns: 1fr;
+            }
+
             header {
                 min-height: 220px;
             }
@@ -229,6 +357,10 @@
             .book-cover {
                 max-width: 280px;
                 margin: 0 auto;
+            }
+
+            .amazon-regions {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .about-author {
@@ -321,6 +453,80 @@
                     </div>
                 </div>
             </div>
+
+            <div class="purchase-section">
+                <h4>Formats &amp; Reviews</h4>
+
+                <div class="purchase-groups">
+                    <article class="purchase-card ebook-card">
+                        <div class="category-label">AMAZON EXCLUSIVE</div>
+                        <h5>Ebook</h5>
+                        <div class="store-links">
+                            <a
+                                class="store-button"
+                                href="https://www.amazon.ca/dp/B0HG683TY3"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <span class="store-name">Amazon Kindle</span>
+                                <span class="store-format">Ebook</span>
+                            </a>
+
+                            <div class="amazon-region-title">Choose your Amazon store</div>
+                            <div class="amazon-regions">
+                                <a class="region-button" href="https://www.amazon.ca/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Canada Kindle ebook"><span>🇨🇦</span><span>Canada</span></a>
+                                <a class="region-button" href="https://www.amazon.com/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon United States Kindle ebook"><span>🇺🇸</span><span>US</span></a>
+                                <a class="region-button" href="https://www.amazon.co.uk/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon United Kingdom Kindle ebook"><span>🇬🇧</span><span>UK</span></a>
+                                <a class="region-button" href="https://www.amazon.de/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Germany Kindle ebook"><span>🇩🇪</span><span>Germany</span></a>
+                                <a class="region-button" href="https://www.amazon.fr/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon France Kindle ebook"><span>🇫🇷</span><span>France</span></a>
+                                <a class="region-button" href="https://www.amazon.es/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Spain Kindle ebook"><span>🇪🇸</span><span>Spain</span></a>
+                                <a class="region-button" href="https://www.amazon.it/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Italy Kindle ebook"><span>🇮🇹</span><span>Italy</span></a>
+                                <a class="region-button" href="https://www.amazon.co.jp/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Japan Kindle ebook"><span>🇯🇵</span><span>Japan</span></a>
+                                <a class="region-button" href="https://www.amazon.com.au/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Australia Kindle ebook"><span>🇦🇺</span><span>Australia</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="purchase-card print-card">
+                        <div class="category-label">PRINT EDITION</div>
+                        <h5>Print Book</h5>
+                        <div class="store-links">
+                            <span class="store-button placeholder-button">
+                                <span class="store-name">Print Book</span>
+                                <span class="store-format">Coming Soon</span>
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="purchase-card audio-card">
+                        <div class="category-label">AUDIOBOOK</div>
+                        <h5>Audiobook</h5>
+                        <div class="store-links">
+                            <span class="store-button placeholder-button">
+                                <span class="store-name">Audiobook</span>
+                                <span class="store-format">Coming Soon</span>
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="purchase-card review-card">
+                        <div class="category-label">REVIEWS</div>
+                        <h5>Book Reviews</h5>
+                        <div class="store-links">
+                            <a
+                                class="store-button"
+                                href="https://www.goodreads.com/book/show/257320850"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <span class="store-name">Goodreads</span>
+                                <span class="store-format">Book Reviews</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
         </section>
 
         <section id="about">
