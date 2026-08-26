@@ -1,1 +1,1150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Adam Sun Publishing | 独立出版服务</title>
+
+    <meta
+        name="description"
+        content="Adam Sun Publishing 为独立作者提供纸质书、电子书出版服务，并可选配作者网站、封面设计、有声书及多语言版本。"
+    >
+
+    <style>
+        :root {
+            --ink: #1c1c1a;
+            --muted: #6e6b64;
+            --paper: #f7f4ed;
+            --white: #ffffff;
+            --gold: #a88347;
+            --line: #ded9ce;
+            --soft: #eee9de;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        .brand {
+            font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 1px solid var(--line);
+            background: rgba(247, 244, 237, 0.96);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav {
+            min-height: 74px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            min-width: 0;
+        }
+
+        .brand-logo {
+            display: block;
+            width: auto;
+            height: 52px;
+            max-width: 240px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 14px;
+        }
+
+        .nav-button,
+        .button-primary {
+            display: inline-block;
+            background: var(--ink);
+            color: var(--white);
+            padding: 12px 19px;
+            border-radius: 2px;
+            transition: 0.2s ease;
+        }
+
+        .nav-button:hover,
+        .button-primary:hover {
+            opacity: 0.84;
+        }
+
+        .button-secondary {
+            display: inline-block;
+            border: 1px solid var(--ink);
+            padding: 11px 19px;
+            border-radius: 2px;
+        }
+
+        .hero {
+            padding: 115px 0 105px;
+        }
+
+        .hero-inner {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2.2px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(46px, 7vw, 78px);
+            line-height: 1.02;
+            font-weight: 500;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 20px;
+            margin: 30px 0;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .intro-strip {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 35px 0;
+        }
+
+        .intro-strip-inner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .intro-item strong {
+            display: block;
+            font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .intro-item span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            max-width: 730px;
+            margin-bottom: 55px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 500;
+            margin: 0 0 15px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            max-width: 100%;
+        }
+
+        .package {
+            background: var(--white);
+            border: 1px solid var(--line);
+            padding: 34px;
+            display: flex;
+            flex-direction: column;
+            min-height: 610px;
+        }
+
+        .package.featured {
+            border-top: 4px solid var(--gold);
+        }
+
+        .bundle-saving {
+            display: inline-block;
+            width: fit-content;
+            margin-top: 10px;
+            padding: 5px 9px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .package-label {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 12px;
+            font-weight: 700;
+            min-height: 22px;
+        }
+
+        .package h3 {
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 1.15;
+            margin: 15px 0;
+        }
+
+        .package-description {
+            color: var(--muted);
+            min-height: 82px;
+        }
+
+        .price {
+            margin: 25px 0 8px;
+            font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
+            font-size: 31px;
+        }
+
+        .price-note {
+            color: var(--muted);
+            font-size: 13px;
+            min-height: 22px;
+        }
+
+        .package ul {
+            padding: 0;
+            margin: 28px 0 35px;
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .package li {
+            border-top: 1px solid var(--soft);
+            padding: 11px 0;
+            font-size: 14px;
+        }
+
+        .package li::before {
+            content: none;
+        }
+
+        .package .button-primary,
+        .package .button-secondary {
+            text-align: center;
+        }
+
+        .process {
+            background: var(--ink);
+            color: var(--white);
+        }
+
+        .process .eyebrow {
+            color: #d3b782;
+        }
+
+        .process .section-heading p {
+            color: #c5c2bb;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .step-number {
+            color: #d3b782;
+            font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            font-size: 23px;
+            font-weight: 500;
+            margin: 0 0 9px;
+        }
+
+        .step p {
+            color: #c5c2bb;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .add-ons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .add-on-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .add-on-card h3 {
+            font-size: 26px;
+            font-weight: 500;
+            margin: 10px 0 12px;
+        }
+
+        .add-on-card p {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .add-on-price {
+            font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
+            font-size: 26px;
+            margin: 22px 0 4px;
+        }
+
+        .add-on-note {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .add-on-card ul {
+            padding: 0;
+            margin: 18px 0 0;
+            list-style: none;
+        }
+
+        .add-on-card li {
+            border-top: 1px solid var(--soft);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .add-on-card li::before {
+            content: none;
+        }
+
+        .language-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .language-tag {
+            border: 1px solid var(--line);
+            padding: 6px 10px;
+            font-size: 13px;
+            background: var(--paper);
+        }
+
+        .for-authors {
+            border-top: 1px solid var(--line);
+        }
+
+        .cta {
+            background: var(--white);
+            border: 1px solid var(--line);
+            padding: 65px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            font-weight: 500;
+            margin: 0 0 10px;
+        }
+
+        .cta p {
+            color: var(--muted);
+            margin: 0;
+            max-width: 620px;
+        }
+
+        footer {
+            padding: 45px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .footer-brand {
+            color: var(--ink);
+            font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+
+
+        .publications {
+            background: var(--white);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .publication-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 260px));
+            gap: 42px;
+            align-items: start;
+        }
+
+        .publication-card {
+            min-width: 0;
+        }
+
+        .publication-cover {
+            position: relative;
+            aspect-ratio: 2 / 3;
+            overflow: hidden;
+            background: #ece7dc;
+            border: 1px solid var(--line);
+            box-shadow: 0 16px 34px rgba(28, 28, 26, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .publication-cover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 22px 42px rgba(28, 28, 26, 0.12);
+        }
+
+        .publication-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            color: var(--muted);
+            text-align: center;
+            padding: 24px;
+            z-index: 1;
+        }
+
+        .cover-placeholder svg {
+            width: 30px;
+            height: 30px;
+            color: var(--gold);
+            stroke-width: 1.4;
+        }
+
+        .cover-placeholder span {
+            font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
+            font-size: 17px;
+        }
+
+        .publication-meta {
+            padding-top: 20px;
+        }
+
+        .publication-meta h3 {
+            margin: 0 0 6px;
+            font-size: 23px;
+            font-weight: 500;
+            line-height: 1.25;
+        }
+
+        .publication-meta p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .publication-note {
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .service-icon,
+        .addon-icon {
+            width: 52px;
+            height: 52px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line);
+            background: var(--paper);
+            color: var(--ink);
+            margin-bottom: 20px;
+        }
+
+        .package.featured .service-icon {
+            border-color: #c7ab78;
+            background: #f3ecdf;
+        }
+
+        .service-icon svg,
+        .addon-icon svg {
+            width: 23px;
+            height: 23px;
+            stroke-width: 1.6;
+        }
+
+        .package-list,
+        .addon-list {
+            padding: 0;
+            margin: 28px 0 35px;
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .package-list li,
+        .addon-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            border-top: 1px solid var(--soft);
+            padding: 11px 0;
+            font-size: 14px;
+        }
+
+        .package-list li::before,
+        .addon-list li::before {
+            content: none;
+        }
+
+        .list-icon {
+            width: 17px;
+            height: 17px;
+            margin-top: 3px;
+            flex: 0 0 auto;
+            color: var(--gold);
+            stroke-width: 1.8;
+        }
+
+        .step-icon {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(211, 183, 130, 0.45);
+            margin-bottom: 18px;
+            color: #d3b782;
+        }
+
+        .step-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 1.6;
+        }
+
+        .addon-icon {
+            width: 46px;
+            height: 46px;
+            margin-bottom: 14px;
+            color: var(--gold);
+        }
+
+        .addon-icon svg {
+            width: 21px;
+            height: 21px;
+        }
+
+        .add-on-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .add-on-card:hover {
+            transform: translateY(-3px);
+            border-color: #c9c1b2;
+            box-shadow: 0 12px 30px rgba(28, 28, 26, 0.06);
+        }
+
+        .package {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .package:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 34px rgba(28, 28, 26, 0.06);
+        }
+
+        @media (max-width: 900px) {
+            .packages {
+                grid-template-columns: 1fr;
+            }
+
+            .steps,
+            .add-ons-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .intro-strip-inner {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .publication-grid {
+                grid-template-columns: repeat(2, minmax(0, 220px));
+            }
+        }
+
+        @media (max-width: 650px) {
+            .nav-links a:not(.nav-button) {
+                display: none;
+            }
+
+            .brand-logo {
+                height: 44px;
+                max-width: 190px;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .steps,
+            .add-ons-grid,
+            .publication-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publication-grid {
+                max-width: 280px;
+            }
+
+            .package {
+                min-height: auto;
+            }
+
+            .cta,
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cta {
+                padding: 38px 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+        <a href="#" class="brand" aria-label="Adam Sun Publishing home">
+            <img src="../publisher.png" alt="Adam Sun Publishing" class="brand-logo">
+        </a>
+
+        <nav class="nav-links">
+            <a href="../" aria-label="English version">EN</a>
+            <a href="./" aria-label="中文版本">中文</a>
+            <a href="#publications">出版作品</a>
+            <a href="#services">出版服务</a>
+            <a href="#process">出版流程</a>
+            <a href="#add-ons">增值服务</a>
+            <a href="#contact" class="nav-button">开始出版</a>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+
+                <div class="eyebrow">
+                    独立出版 · 加拿大埃德蒙顿
+                </div>
+
+                <h1>
+                    让你的书稿，不止停留在草稿里。
+                </h1>
+
+                <p>
+                    Adam Sun Publishing 帮助独立作者将完成的书稿制作并出版为专业的纸质书和电子书，
+                    同时提供作者网站、封面设计、有声书及多语言版本等可选服务。
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#services" class="button-primary">
+                        查看出版服务
+                    </a>
+
+                    <a href="#contact" class="button-secondary">
+                        咨询你的书稿
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="intro-strip">
+        <div class="container intro-strip-inner">
+
+            <div class="intro-item">
+                <strong>纸质书与电子书</strong>
+                <span>制作符合主流发行渠道要求的出版版本。</span>
+            </div>
+
+            <div class="intro-item">
+                <strong>全球发行</strong>
+                <span>通过成熟的零售与发行网络，让作品面向更广泛的读者。</span>
+            </div>
+
+            <div class="intro-item">
+                <strong>作者自主权</strong>
+                <span>你的名字，你的作品，以及属于你的长期出版品牌。</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <section class="publications" id="publications">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="eyebrow">精选出版作品</div>
+
+                <h2>
+                    我们参与出版的作品。
+                </h2>
+
+                <p>
+                    以下为由 Adam Sun Publishing 参与制作与出版的部分作品。
+                </p>
+            </div>
+
+            <div class="publication-grid">
+
+                <article class="publication-card">
+                    <div class="publication-cover">
+                        <div class="cover-placeholder" aria-hidden="true">
+                            <i data-lucide="book-open"></i>
+                            <span>书籍封面</span>
+                        </div>
+
+                        <img
+                            src="../publication-1.jpg"
+                            alt="《The Birth of Rome》封面"
+                            onerror="this.style.display='none';"
+                        >
+                    </div>
+
+                    <div class="publication-meta">
+                        <h3>The Birth of Rome</h3>
+                        <p>纸质书 · 电子书</p>
+                    </div>
+                </article>
+
+
+                <article class="publication-card">
+                    <div class="publication-cover">
+                        <div class="cover-placeholder" aria-hidden="true">
+                            <i data-lucide="book-open"></i>
+                            <span>书籍封面</span>
+                        </div>
+
+                        <img
+                            src="../publication-2.png"
+                            alt="《罗马之路》封面"
+                            onerror="this.style.display='none';"
+                        >
+                    </div>
+
+                    <div class="publication-meta">
+                        <h3>罗马之路</h3>
+                        <p>纸质书 · 电子书</p>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="services">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="eyebrow">出版服务</div>
+
+                <h2>
+                    选择适合你的出版方案。
+                </h2>
+
+                <p>
+                    你可以选择基础出版方案，完成纸质书与电子书出版；
+                    也可以选择完整出版方案，将封面设计与作者网站一次完成。
+                </p>
+            </div>
+
+            <div class="packages">
+
+                <article class="package">
+
+                    <div class="service-icon" aria-hidden="true">
+                        <i data-lucide="book-open"></i>
+                    </div>
+
+                    <div class="package-label">基础出版方案</div>
+
+                    <h3>基础出版方案</h3>
+
+                    <p class="package-description">
+                        适合已经完成书稿，希望将作品专业制作并出版为纸质书和电子书，
+                        并进入主流发行渠道的作者。
+                    </p>
+
+                    <div class="price">C$899 起</div>
+                    <div class="price-note">包含一个纸质书版本及一个电子书版本。</div>
+
+                    <ul class="package-list">
+                        <li><i data-lucide="book" class="list-icon"></i><span>纸质书内页排版与出版文件制作</span></li>
+                        <li><i data-lucide="tablet-smartphone" class="list-icon"></i><span>电子书制作</span></li>
+                        <li><i data-lucide="badge-info" class="list-icon"></i><span>ISBN 与出版元数据指导</span></li>
+                        <li><i data-lucide="settings" class="list-icon"></i><span>出版平台设置</span></li>
+                        <li><i data-lucide="ruler" class="list-icon"></i><span>印刷规格审核</span></li>
+                        <li><i data-lucide="search-check" class="list-icon"></i><span>电子样书质量检查</span></li>
+                        <li><i data-lucide="globe-2" class="list-icon"></i><span>零售与发行渠道设置</span></li>
+                        <li><i data-lucide="handshake" class="list-icon"></i><span>出版过程支持</span></li>
+                    </ul>
+
+                    <a href="#contact" class="button-secondary">
+                        选择基础出版
+                    </a>
+
+                </article>
+
+
+                <article class="package featured">
+
+                    <div class="service-icon" aria-hidden="true">
+                        <i data-lucide="badge-check"></i>
+                    </div>
+
+                    <div class="package-label">推荐方案</div>
+
+                    <h3>完整出版方案</h3>
+
+                    <p class="package-description">
+                        适合希望一次完成图书出版、专业封面设计和作者线上品牌展示的作者。
+                    </p>
+
+                    <div class="price">C$1,699</div>
+                    <div class="price-note">基础出版方案 + 定制封面设计 + 作者网站。</div>
+                    <div class="bundle-saving">相比单独购买节省 C$98</div>
+
+                    <ul class="package-list">
+                        <li><i data-lucide="circle-check" class="list-icon"></i><span>包含基础出版方案全部服务</span></li>
+                        <li><i data-lucide="pen-tool" class="list-icon"></i><span>定制封面设计</span></li>
+                        <li><i data-lucide="monitor" class="list-icon"></i><span>专业作者网站</span></li>
+                        <li><i data-lucide="user-round" class="list-icon"></i><span>作者简介页面</span></li>
+                        <li><i data-lucide="layout-template" class="list-icon"></i><span>独立图书展示页面</span></li>
+                        <li><i data-lucide="shopping-bag" class="list-icon"></i><span>零售购买链接</span></li>
+                        <li><i data-lucide="library-big" class="list-icon"></i><span>书商与图书馆信息页面</span></li>
+                        <li><i data-lucide="globe" class="list-icon"></i><span>自定义域名连接</span></li>
+                        <li><i data-lucide="search" class="list-icon"></i><span>基础搜索引擎优化信息</span></li>
+                    </ul>
+
+                    <a href="#contact" class="button-primary">
+                        选择完整出版
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="process" id="process">
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">出版流程</div>
+
+                <h2>
+                    从书稿到正式出版，流程清晰简单。
+                </h2>
+
+                <p>
+                    每个项目都从书稿开始，并以一本能够正式面向读者的作品完成。
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+                    <div class="step-icon" aria-hidden="true">
+                        <i data-lucide="file-up"></i>
+                    </div>
+                    <div class="step-number">01</div>
+                    <h3>提交书稿</h3>
+                    <p>
+                        提交你的书稿，并告诉我们你希望通过这本书实现什么目标。
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon" aria-hidden="true">
+                        <i data-lucide="settings-2"></i>
+                    </div>
+                    <div class="step-number">02</div>
+                    <h3>出版准备</h3>
+                    <p>
+                        我们会审核文件、出版要求、元数据、排版及发行需求。
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon" aria-hidden="true">
+                        <i data-lucide="search-check"></i>
+                    </div>
+                    <div class="step-number">03</div>
+                    <h3>最终审核</h3>
+                    <p>
+                        你将收到出版就绪的文件，并在正式发布前确认最终版本。
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon" aria-hidden="true">
+                        <i data-lucide="book-check"></i>
+                    </div>
+                    <div class="step-number">04</div>
+                    <h3>正式出版</h3>
+                    <p>
+                        完成的作品将按照选定渠道进行出版与发行。
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="add-ons">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="eyebrow">可选增值服务</div>
+
+                <h2>
+                    只为你的书添加真正需要的服务。
+                </h2>
+
+                <p>
+                    在基础出版方案之上，可按需增加作者品牌、设计、有声书或国际语言版本服务。
+                </p>
+            </div>
+
+            <div class="add-ons-grid">
+
+                <article class="add-on-card">
+                    <div class="addon-icon" aria-hidden="true"><i data-lucide="monitor-smartphone"></i></div>
+                    <div class="package-label">作者品牌</div>
+                    <h3>作者网站</h3>
+                    <p>
+                        建立专业作者网站，包括图书展示页、作者简介、零售购买链接，
+                        以及书商与图书馆所需的信息。
+                    </p>
+                    <div class="add-on-price">C$499 起</div>
+                    <div class="add-on-note">不包含域名注册费用。</div>
+                </article>
+
+                <article class="add-on-card">
+                    <div class="addon-icon" aria-hidden="true"><i data-lucide="pen-tool"></i></div>
+                    <div class="package-label">设计</div>
+                    <h3>定制封面设计</h3>
+                    <p>
+                        根据作品类型、书籍规格和发行渠道要求，设计可直接用于出版的专业封面。
+                    </p>
+                    <div class="add-on-price">C$399 起</div>
+                    <div class="add-on-note">最终价格根据设计复杂度及所需版本确定。</div>
+                </article>
+
+                <article class="add-on-card">
+                    <div class="addon-icon" aria-hidden="true"><i data-lucide="mic-2"></i></div>
+                    <div class="package-label">有声书</div>
+                    <h3>有声书版本</h3>
+                    <p>
+                        基于已经完成的图书，为有声书版本提供制作准备与出版支持。
+                    </p>
+                    <div class="add-on-price">C$499</div>
+                    <div class="add-on-note">如需配音或音频制作，相关费用另行报价。</div>
+                </article>
+
+                <article class="add-on-card">
+                    <div class="addon-icon" aria-hidden="true"><i data-lucide="languages"></i></div>
+                    <div class="package-label">国际语言版本</div>
+                    <h3>多语言版本</h3>
+                    <p>
+                        为作品制作其他语言版本，包括翻译、本地化、元数据准备及出版支持。
+                    </p>
+                    <div class="add-on-price">按项目报价</div>
+                    <div class="add-on-note">
+                        价格根据书稿长度、源语言及编辑复杂度确定。
+                    </div>
+
+                    <div class="language-list">
+                        <span class="language-tag">英语</span>
+                        <span class="language-tag">德语</span>
+                        <span class="language-tag">西班牙语</span>
+                        <span class="language-tag">法语</span>
+                    </div>
+
+                    <ul class="addon-list">
+                        <li><i data-lucide="languages" class="list-icon"></i><span>翻译与语言本地化</span></li>
+                        <li><i data-lucide="spell-check-2" class="list-icon"></i><span>语言编辑与术语统一</span></li>
+                        <li><i data-lucide="type" class="list-icon"></i><span>书名与副标题本地化</span></li>
+                        <li><i data-lucide="file-text" class="list-icon"></i><span>图书简介与出版元数据</span></li>
+                        <li><i data-lucide="book-copy" class="list-icon"></i><span>纸质书与电子书排版</span></li>
+                        <li><i data-lucide="globe-2" class="list-icon"></i><span>出版与发行设置</span></li>
+                    </ul>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <div class="container" style="padding-top: 0; padding-bottom: 35px;">
+        <p style="color: var(--muted); font-size: 13px; margin: 0;">
+            除非另行报价，套餐价格不包含全文编辑、校对、翻译、有声书配音或音频制作、
+            实体书印刷成本、付费广告及域名注册费用。
+        </p>
+    </div>
+
+
+    <section class="for-authors" id="contact">
+        <div class="container">
+
+            <div class="cta">
+
+                <div>
+                    <h2>已经有完成的书稿？</h2>
+
+                    <p>
+                        告诉我们你的书籍类型、书稿长度、语言和出版目标。
+                        我们会确认适合你的出版方案，并根据项目需要推荐可选服务。
+                        联系邮箱：Adamsunmaple@gmail.com
+                    </p>
+                </div>
+
+                <a
+                    href="mailto:adamsunmaple@gmail.com"
+                    class="button-primary"
+                >
+                    联系我们
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="container footer-inner">
+
+        <div>
+            <div class="footer-brand">ADAM SUN PUBLISHING</div>
+            <div>加拿大 · 阿尔伯塔省 · 埃德蒙顿</div>
+        </div>
+
+        <div>
+            © 2026 Adam Sun Publishing. 保留所有权利。
+        </div>
+
+    </div>
+</footer>
+
+
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
