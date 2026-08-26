@@ -274,6 +274,57 @@
             font-size: 31px;
         }
 
+        .offer-tag {
+            display: inline-block;
+            width: fit-content;
+            margin-top: 22px;
+            padding: 6px 10px;
+            border: 1px solid #c7ab78;
+            background: #f3ecdf;
+            color: #8b6a35;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .price-line {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin: 10px 0 3px;
+        }
+
+        .regular-price {
+            color: #9b968e;
+            font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
+            font-size: 20px;
+            text-decoration: line-through;
+            text-decoration-thickness: 1.5px;
+        }
+
+        .sale-price {
+            color: var(--ink);
+            font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .save-text {
+            color: #8b6a35;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 5px 0 8px;
+        }
+
+        .offer-note {
+            margin-top: 14px !important;
+            font-size: 14px !important;
+            color: #8b6a35 !important;
+            font-weight: 600;
+        }
+
         .price-note {
             color: var(--muted);
             font-size: 13px;
@@ -868,6 +919,9 @@
                     你可以选择基础出版方案，完成纸质书与电子书出版；
                     也可以选择完整出版方案，将封面设计与作者网站一次完成。
                 </p>
+                <p class="offer-note">
+                    首发优惠进行中，新出版项目现享特别价格。
+                </p>
             </div>
 
             <div class="packages">
@@ -887,7 +941,12 @@
                         并进入主流发行渠道的作者。
                     </p>
 
-                    <div class="price">C$899 起</div>
+                    <div class="offer-tag">首发优惠</div>
+                    <div class="price-line">
+                        <span class="regular-price">原价 C$1,299</span>
+                        <span class="sale-price">C$899 起</span>
+                    </div>
+                    <div class="save-text">现在立省 C$400</div>
                     <div class="price-note">包含一个纸质书版本及一个电子书版本。</div>
 
                     <ul class="package-list">
@@ -922,9 +981,13 @@
                         适合希望一次完成图书出版、专业封面设计和作者线上品牌展示的作者。
                     </p>
 
-                    <div class="price">C$1,699</div>
+                    <div class="offer-tag">首发优惠</div>
+                    <div class="price-line">
+                        <span class="regular-price">原价 C$2,099</span>
+                        <span class="sale-price">C$1,699</span>
+                    </div>
+                    <div class="save-text">现在立省 C$400</div>
                     <div class="price-note">基础出版方案 + 定制封面设计 + 作者网站。</div>
-                    <div class="bundle-saving">相比单独购买节省 C$98</div>
 
                     <ul class="package-list">
                         <li><i data-lucide="circle-check" class="list-icon"></i><span>包含基础出版方案全部服务</span></li>
