@@ -8,7 +8,7 @@
 
     <meta
         name="description"
-        content="Adam Sun Publishing helps authors bring books to market through professional publishing, author websites, and English-language editions."
+        content="Adam Sun Publishing helps authors publish professional paperback and ebook editions, with optional author websites, cover design, audiobooks, and multilingual editions."
     >
 
     <style>
@@ -192,8 +192,9 @@
 
         .packages {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: minmax(0, 1fr);
             gap: 22px;
+            max-width: 760px;
         }
 
         .package {
@@ -304,39 +305,73 @@
             margin: 0;
         }
 
-        .translation {
+        .add-ons-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
         }
 
-        .translation h2 {
-            font-size: clamp(36px, 5vw, 52px);
-            font-weight: 500;
-            line-height: 1.1;
-            margin: 0 0 20px;
-        }
-
-        .translation p {
-            color: var(--muted);
-            font-size: 17px;
-        }
-
-        .translation-box {
+        .add-on-card {
             background: var(--white);
             border: 1px solid var(--line);
-            padding: 42px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
         }
 
-        .translation-box h3 {
-            font-size: 25px;
-            margin-top: 0;
+        .add-on-card h3 {
+            font-size: 26px;
+            font-weight: 500;
+            margin: 10px 0 12px;
         }
 
-        .translation-box ul {
-            padding-left: 20px;
+        .add-on-card p {
             color: var(--muted);
+            margin: 0;
+        }
+
+        .add-on-price {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 26px;
+            margin: 22px 0 4px;
+        }
+
+        .add-on-note {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .add-on-card ul {
+            padding: 0;
+            margin: 18px 0 0;
+            list-style: none;
+        }
+
+        .add-on-card li {
+            border-top: 1px solid var(--soft);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .add-on-card li::before {
+            content: "—";
+            color: var(--gold);
+            margin-right: 9px;
+        }
+
+        .language-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .language-tag {
+            border: 1px solid var(--line);
+            padding: 6px 10px;
+            font-size: 13px;
+            background: var(--paper);
         }
 
         .for-authors {
@@ -386,13 +421,9 @@
         }
 
         @media (max-width: 900px) {
-            .packages,
-            .steps {
+            .steps,
+            .add-ons-grid {
                 grid-template-columns: 1fr 1fr;
-            }
-
-            .translation {
-                grid-template-columns: 1fr;
             }
 
             .intro-strip-inner {
@@ -410,8 +441,8 @@
                 padding: 80px 0;
             }
 
-            .packages,
-            .steps {
+            .steps,
+            .add-ons-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -441,7 +472,7 @@
         <nav class="nav-links">
             <a href="#services">Services</a>
             <a href="#process">How It Works</a>
-            <a href="#english-edition">English Editions</a>
+            <a href="#add-ons">Add-ons</a>
             <a href="#contact" class="nav-button">Start a Project</a>
         </nav>
     </div>
@@ -464,13 +495,13 @@
 
                 <p>
                     Adam Sun Publishing helps independent authors turn completed
-                    manuscripts into professionally published books — from print
-                    and ebook distribution to author websites and English-language editions.
+                    manuscripts into professionally published paperback and ebook editions,
+                    with optional author websites, cover design, audiobooks, and multilingual editions.
                 </p>
 
                 <div class="hero-actions">
                     <a href="#services" class="button-primary">
-                        Explore Publishing Packages
+                        Explore Publishing Services
                     </a>
 
                     <a href="#contact" class="button-secondary">
@@ -487,7 +518,7 @@
         <div class="container intro-strip-inner">
 
             <div class="intro-item">
-                <strong>Print & Ebook</strong>
+                <strong>Paperback & Ebook</strong>
                 <span>Publication-ready editions for major distribution channels.</span>
             </div>
 
@@ -512,35 +543,34 @@
                 <div class="eyebrow">Publishing Services</div>
 
                 <h2>
-                    Choose the level of support your book needs.
+                    Start with one complete publishing package.
                 </h2>
 
                 <p>
-                    From a finished manuscript ready for publication to a complete
-                    English-language edition, each package is designed around a clear
-                    publishing goal.
+                    Publishing Essentials covers the core work required to turn a completed
+                    manuscript into both a professional paperback and ebook edition.
+                    Additional services can be added only when you need them.
                 </p>
             </div>
 
-
             <div class="packages">
 
-                <article class="package">
+                <article class="package featured">
 
-                    <div class="package-label">Essential</div>
+                    <div class="package-label">Core Publishing Package</div>
 
                     <h3>Publishing Essentials</h3>
 
                     <p class="package-description">
-                        For authors with a completed manuscript who want a professionally
-                        prepared book ready for publication and distribution.
+                        For authors with a completed manuscript who want both a professionally
+                        prepared paperback and ebook ready for publication and distribution.
                     </p>
 
-                    <div class="price">From C$499</div>
-                    <div class="price-note">Final price depends on book complexity.</div>
+                    <div class="price">From C$899</div>
+                    <div class="price-note">Includes one paperback edition and one ebook edition.</div>
 
                     <ul>
-                        <li>Print-ready interior preparation</li>
+                        <li>Paperback interior preparation</li>
                         <li>Ebook preparation</li>
                         <li>ISBN and metadata guidance</li>
                         <li>Publishing platform setup</li>
@@ -550,77 +580,8 @@
                         <li>Publication support</li>
                     </ul>
 
-                    <a href="#contact" class="button-secondary">
-                        Start Publishing
-                    </a>
-
-                </article>
-
-
-                <article class="package featured">
-
-                    <div class="package-label">Most Popular</div>
-
-                    <h3>Publishing + Author Website</h3>
-
-                    <p class="package-description">
-                        Everything needed to publish your book, plus a professional
-                        online presence that readers, booksellers, and librarians can find.
-                    </p>
-
-                    <div class="price">From C$899</div>
-                    <div class="price-note">Includes publishing and web setup.</div>
-
-                    <ul>
-                        <li>Everything in Publishing Essentials</li>
-                        <li>Professional author website</li>
-                        <li>Author biography page</li>
-                        <li>Dedicated book landing page</li>
-                        <li>Book cover and description presentation</li>
-                        <li>Retail purchase links</li>
-                        <li>Bookseller and librarian information</li>
-                        <li>Custom domain connection</li>
-                        <li>Basic search engine metadata</li>
-                    </ul>
-
                     <a href="#contact" class="button-primary">
-                        Build Your Author Presence
-                    </a>
-
-                </article>
-
-
-                <article class="package">
-
-                    <div class="package-label">International</div>
-
-                    <h3>English Edition</h3>
-
-                    <p class="package-description">
-                        For authors who want to bring an existing non-English manuscript
-                        to English-language readers and international distribution.
-                    </p>
-
-                    <div class="price">Custom Quote</div>
-
-                    <div class="price-note">
-                        Based on manuscript length and editorial requirements.
-                    </div>
-
-                    <ul>
-                        <li>Manuscript evaluation</li>
-                        <li>English translation</li>
-                        <li>English-language editing</li>
-                        <li>Naturalization for English readers</li>
-                        <li>Title and subtitle consultation</li>
-                        <li>English book description</li>
-                        <li>English metadata preparation</li>
-                        <li>Print and ebook formatting</li>
-                        <li>Publication and distribution setup</li>
-                    </ul>
-
-                    <a href="#contact" class="button-secondary">
-                        Request an English Edition Quote
+                        Start Publishing
                     </a>
 
                 </article>
@@ -694,52 +655,85 @@
     </section>
 
 
-    <section id="english-edition">
-        <div class="container translation">
+    <section id="add-ons">
+        <div class="container">
 
-            <div>
-
-                <div class="eyebrow">
-                    English-Language Publishing
-                </div>
+            <div class="section-heading">
+                <div class="eyebrow">Optional Add-ons</div>
 
                 <h2>
-                    More than translating words.
+                    Add only what your book needs.
                 </h2>
 
                 <p>
-                    A book written for one language often needs more than literal
-                    translation to work for readers in another.
+                    Build on Publishing Essentials with additional author, design,
+                    audio, or international publishing services.
                 </p>
-
-                <p>
-                    Our English Edition service focuses on preserving the author's
-                    ideas and voice while creating clear, natural English suitable
-                    for publication.
-                </p>
-
-                <p>
-                    The result is prepared as an English-language book rather than
-                    simply a translated manuscript.
-                </p>
-
             </div>
 
+            <div class="add-ons-grid">
 
-            <div class="translation-box">
+                <article class="add-on-card">
+                    <div class="package-label">Author Presence</div>
+                    <h3>Author Website</h3>
+                    <p>
+                        A professional author website with a book landing page,
+                        biography, retailer links, and bookseller or librarian information.
+                    </p>
+                    <div class="add-on-price">From C$499</div>
+                    <div class="add-on-note">Custom domain cost is not included.</div>
+                </article>
 
-                <h3>English Edition may include</h3>
+                <article class="add-on-card">
+                    <div class="package-label">Design</div>
+                    <h3>Custom Cover Design</h3>
+                    <p>
+                        A publication-ready cover designed for your book's genre,
+                        format, and selected distribution channels.
+                    </p>
+                    <div class="add-on-price">From C$399</div>
+                    <div class="add-on-note">Final pricing depends on design complexity and formats.</div>
+                </article>
 
-                <ul>
-                    <li>Translation and language adaptation</li>
-                    <li>Removal of literal translation patterns</li>
-                    <li>Terminology consistency</li>
-                    <li>Editorial restructuring where appropriate</li>
-                    <li>English title and subtitle development</li>
-                    <li>Book description and author biography</li>
-                    <li>International publishing metadata</li>
-                    <li>Print and ebook publication</li>
-                </ul>
+                <article class="add-on-card">
+                    <div class="package-label">Audio Edition</div>
+                    <h3>Audiobook Edition</h3>
+                    <p>
+                        Preparation and publishing support for an audiobook edition
+                        based on your completed book.
+                    </p>
+                    <div class="add-on-price">C$499</div>
+                    <div class="add-on-note">Narration or voice-production costs, if required, are quoted separately.</div>
+                </article>
+
+                <article class="add-on-card">
+                    <div class="package-label">International Editions</div>
+                    <h3>Language Edition</h3>
+                    <p>
+                        Translation, language adaptation, metadata preparation,
+                        and publication support for an additional language edition.
+                    </p>
+                    <div class="add-on-price">Custom Quote</div>
+                    <div class="add-on-note">
+                        Pricing is based on manuscript length, source language, and editorial complexity.
+                    </div>
+
+                    <div class="language-list">
+                        <span class="language-tag">English</span>
+                        <span class="language-tag">German</span>
+                        <span class="language-tag">Spanish</span>
+                        <span class="language-tag">French</span>
+                    </div>
+
+                    <ul>
+                        <li>Translation and language adaptation</li>
+                        <li>Language editing and terminology consistency</li>
+                        <li>Title and subtitle adaptation</li>
+                        <li>Book description and metadata</li>
+                        <li>Paperback and ebook formatting</li>
+                        <li>Publication and distribution setup</li>
+                    </ul>
+                </article>
 
             </div>
 
@@ -757,8 +751,8 @@
 
                     <p>
                         Tell us about your book, manuscript length, language,
-                        and publishing goals. We will recommend the most appropriate
-                        publishing path.
+                        and publishing goals. We will confirm the Publishing Essentials
+                        scope and recommend any add-ons that fit your project.
                     </p>
                 </div>
 
