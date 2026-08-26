@@ -72,9 +72,17 @@
         }
 
         .brand {
-            font-size: 21px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            min-width: 0;
+        }
+
+        .brand-logo {
+            display: block;
+            width: auto;
+            height: 52px;
+            max-width: 240px;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -192,9 +200,9 @@
 
         .packages {
             display: grid;
-            grid-template-columns: minmax(0, 1fr);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 22px;
-            max-width: 760px;
+            max-width: 100%;
         }
 
         .package {
@@ -208,6 +216,18 @@
 
         .package.featured {
             border-top: 4px solid var(--gold);
+        }
+
+        .bundle-saving {
+            display: inline-block;
+            width: fit-content;
+            margin-top: 10px;
+            padding: 5px 9px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
         }
 
         .package-label {
@@ -421,6 +441,10 @@
         }
 
         @media (max-width: 900px) {
+            .packages {
+                grid-template-columns: 1fr;
+            }
+
             .steps,
             .add-ons-grid {
                 grid-template-columns: 1fr 1fr;
@@ -435,6 +459,11 @@
         @media (max-width: 650px) {
             .nav-links a:not(.nav-button) {
                 display: none;
+            }
+
+            .brand-logo {
+                height: 44px;
+                max-width: 190px;
             }
 
             .hero {
@@ -467,7 +496,9 @@
 
 <header>
     <div class="container nav">
-        <a href="#" class="brand">ADAM SUN PUBLISHING</a>
+        <a href="#" class="brand" aria-label="Adam Sun Publishing home">
+            <img src="publisher.png" alt="Adam Sun Publishing" class="brand-logo">
+        </a>
 
         <nav class="nav-links">
             <a href="#services">Services</a>
@@ -543,19 +574,19 @@
                 <div class="eyebrow">Publishing Services</div>
 
                 <h2>
-                    Start with one complete publishing package.
+                    Choose the publishing path that fits your book.
                 </h2>
 
                 <p>
-                    Publishing Essentials covers the core work required to turn a completed
-                    manuscript into both a professional paperback and ebook edition.
-                    Additional services can be added only when you need them.
+                    Start with Publishing Essentials for paperback and ebook publication,
+                    or choose the Complete Publishing Package for a finished author presence
+                    with custom cover design and an author website.
                 </p>
             </div>
 
             <div class="packages">
 
-                <article class="package featured">
+                <article class="package">
 
                     <div class="package-label">Core Publishing Package</div>
 
@@ -580,8 +611,42 @@
                         <li>Publication support</li>
                     </ul>
 
+                    <a href="#contact" class="button-secondary">
+                        Start with Essentials
+                    </a>
+
+                </article>
+
+
+                <article class="package featured">
+
+                    <div class="package-label">Best Value</div>
+
+                    <h3>Complete Publishing Package</h3>
+
+                    <p class="package-description">
+                        A complete publishing and author-brand package for writers who want
+                        their book, cover, and professional online presence prepared together.
+                    </p>
+
+                    <div class="price">C$1,699</div>
+                    <div class="price-note">Publishing Essentials + Custom Cover Design + Author Website.</div>
+                    <div class="bundle-saving">Save C$98 compared with individual services</div>
+
+                    <ul>
+                        <li>Everything in Publishing Essentials</li>
+                        <li>Custom cover design</li>
+                        <li>Professional author website</li>
+                        <li>Author biography page</li>
+                        <li>Dedicated book landing page</li>
+                        <li>Retail purchase links</li>
+                        <li>Bookseller and librarian information</li>
+                        <li>Custom domain connection</li>
+                        <li>Basic search engine metadata</li>
+                    </ul>
+
                     <a href="#contact" class="button-primary">
-                        Start Publishing
+                        Choose Complete Publishing
                     </a>
 
                 </article>
@@ -681,7 +746,7 @@
                         biography, retailer links, and bookseller or librarian information.
                     </p>
                     <div class="add-on-price">From C$499</div>
-                    <div class="add-on-note">Custom domain cost is not included.</div>
+                    <div class="add-on-note">Domain registration fees are not included.</div>
                 </article>
 
                 <article class="add-on-card">
@@ -741,6 +806,16 @@
     </section>
 
 
+
+    <div class="container" style="padding-top: 0; padding-bottom: 35px;">
+        <p style="color: var(--muted); font-size: 13px; margin: 0;">
+            Package pricing does not include manuscript editing, proofreading, translation,
+            audiobook narration or production, printing costs, paid advertising, or domain
+            registration fees unless specifically quoted.
+        </p>
+    </div>
+
+
     <section class="for-authors" id="contact">
         <div class="container">
 
@@ -751,13 +826,14 @@
 
                     <p>
                         Tell us about your book, manuscript length, language,
-                        and publishing goals. We will confirm the Publishing Essentials
-                        scope and recommend any add-ons that fit your project.
+                        and publishing goals. We will confirm the package scope and
+                        recommend any optional add-ons that fit your project.
+                        Contact us: Adamsunmaple@gmail.com
                     </p>
                 </div>
 
                 <a
-                    href="mailto:info@adamsunpublishing.com"
+                    href="mailto:adamsunmaple@gmail.com"
                     class="button-primary"
                 >
                     Start a Conversation
