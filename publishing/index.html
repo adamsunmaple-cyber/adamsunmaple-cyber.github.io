@@ -277,9 +277,7 @@
         }
 
         .package li::before {
-            content: "—";
-            color: var(--gold);
-            margin-right: 9px;
+            content: none;
         }
 
         .package .button-primary,
@@ -375,9 +373,7 @@
         }
 
         .add-on-card li::before {
-            content: "—";
-            color: var(--gold);
-            margin-right: 9px;
+            content: none;
         }
 
         .language-list {
@@ -440,6 +436,202 @@
             font-size: 17px;
         }
 
+
+
+        .publications {
+            background: var(--white);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .publication-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 260px));
+            gap: 42px;
+            align-items: start;
+        }
+
+        .publication-card {
+            min-width: 0;
+        }
+
+        .publication-cover {
+            position: relative;
+            aspect-ratio: 2 / 3;
+            overflow: hidden;
+            background: #ece7dc;
+            border: 1px solid var(--line);
+            box-shadow: 0 16px 34px rgba(28, 28, 26, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .publication-cover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 22px 42px rgba(28, 28, 26, 0.12);
+        }
+
+        .publication-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            color: var(--muted);
+            text-align: center;
+            padding: 24px;
+            z-index: 1;
+        }
+
+        .cover-placeholder svg {
+            width: 30px;
+            height: 30px;
+            color: var(--gold);
+            stroke-width: 1.4;
+        }
+
+        .cover-placeholder span {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 17px;
+        }
+
+        .publication-meta {
+            padding-top: 20px;
+        }
+
+        .publication-meta h3 {
+            margin: 0 0 6px;
+            font-size: 23px;
+            font-weight: 500;
+            line-height: 1.25;
+        }
+
+        .publication-meta p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .publication-note {
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .service-icon,
+        .addon-icon {
+            width: 52px;
+            height: 52px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line);
+            background: var(--paper);
+            color: var(--ink);
+            margin-bottom: 20px;
+        }
+
+        .package.featured .service-icon {
+            border-color: #c7ab78;
+            background: #f3ecdf;
+        }
+
+        .service-icon svg,
+        .addon-icon svg {
+            width: 23px;
+            height: 23px;
+            stroke-width: 1.6;
+        }
+
+        .package-list,
+        .addon-list {
+            padding: 0;
+            margin: 28px 0 35px;
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .package-list li,
+        .addon-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            border-top: 1px solid var(--soft);
+            padding: 11px 0;
+            font-size: 14px;
+        }
+
+        .package-list li::before,
+        .addon-list li::before {
+            content: none;
+        }
+
+        .list-icon {
+            width: 17px;
+            height: 17px;
+            margin-top: 3px;
+            flex: 0 0 auto;
+            color: var(--gold);
+            stroke-width: 1.8;
+        }
+
+        .step-icon {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(211, 183, 130, 0.45);
+            margin-bottom: 18px;
+            color: #d3b782;
+        }
+
+        .step-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 1.6;
+        }
+
+        .addon-icon {
+            width: 46px;
+            height: 46px;
+            margin-bottom: 14px;
+            color: var(--gold);
+        }
+
+        .addon-icon svg {
+            width: 21px;
+            height: 21px;
+        }
+
+        .add-on-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .add-on-card:hover {
+            transform: translateY(-3px);
+            border-color: #c9c1b2;
+            box-shadow: 0 12px 30px rgba(28, 28, 26, 0.06);
+        }
+
+        .package {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .package:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 34px rgba(28, 28, 26, 0.06);
+        }
+
         @media (max-width: 900px) {
             .packages {
                 grid-template-columns: 1fr;
@@ -453,6 +645,10 @@
             .intro-strip-inner {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+
+            .publication-grid {
+                grid-template-columns: repeat(2, minmax(0, 220px));
             }
         }
 
@@ -471,8 +667,13 @@
             }
 
             .steps,
-            .add-ons-grid {
+            .add-ons-grid,
+            .publication-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .publication-grid {
+                max-width: 280px;
             }
 
             .package {
@@ -501,6 +702,7 @@
         </a>
 
         <nav class="nav-links">
+            <a href="#publications">Publications</a>
             <a href="#services">Services</a>
             <a href="#process">How It Works</a>
             <a href="#add-ons">Add-ons</a>
@@ -567,6 +769,74 @@
     </div>
 
 
+    <section class="publications" id="publications">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="eyebrow">Selected Publications</div>
+
+                <h2>
+                    Books we have brought to publication.
+                </h2>
+
+                <p>
+                    A selection of titles prepared and published through Adam Sun Publishing.
+                </p>
+            </div>
+
+            <div class="publication-grid">
+
+                <article class="publication-card">
+                    <div class="publication-cover">
+                        <div class="cover-placeholder" aria-hidden="true">
+                            <i data-lucide="book-open"></i>
+                            <span>Book Cover</span>
+                        </div>
+
+                        <img
+                            src="publication-1.jpg"
+                            alt="Publication 1 book cover"
+                            onerror="this.style.display='none';"
+                        >
+                    </div>
+
+                    <div class="publication-meta">
+                        <h3>The Birth of Rome</h3>
+                        <p>Paperback · Ebook</p>
+                    </div>
+                </article>
+
+
+                <article class="publication-card">
+                    <div class="publication-cover">
+                        <div class="cover-placeholder" aria-hidden="true">
+                            <i data-lucide="book-open"></i>
+                            <span>Book Cover</span>
+                        </div>
+
+                        <img
+                            src="publication-2.jpg"
+                            alt="Publication 2 book cover"
+                            onerror="this.style.display='none';"
+                        >
+                    </div>
+
+                    <div class="publication-meta">
+                        <h3>罗马之路</h3>
+                        <p>Paperback · Ebook</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="publication-note">
+                Replace publication-1.jpg and publication-2.jpg with your book cover images.
+            </div>
+
+        </div>
+    </section>
+
+
     <section id="services">
         <div class="container">
 
@@ -588,6 +858,10 @@
 
                 <article class="package">
 
+                    <div class="service-icon" aria-hidden="true">
+                        <i data-lucide="book-open"></i>
+                    </div>
+
                     <div class="package-label">Core Publishing Package</div>
 
                     <h3>Publishing Essentials</h3>
@@ -600,15 +874,15 @@
                     <div class="price">From C$899</div>
                     <div class="price-note">Includes one paperback edition and one ebook edition.</div>
 
-                    <ul>
-                        <li>Paperback interior preparation</li>
-                        <li>Ebook preparation</li>
-                        <li>ISBN and metadata guidance</li>
-                        <li>Publishing platform setup</li>
-                        <li>Print specification review</li>
-                        <li>eProof quality check</li>
-                        <li>Retail distribution setup</li>
-                        <li>Publication support</li>
+                    <ul class="package-list">
+                        <li><i data-lucide="book" class="list-icon"></i><span>Paperback interior preparation</span></li>
+                        <li><i data-lucide="tablet-smartphone" class="list-icon"></i><span>Ebook preparation</span></li>
+                        <li><i data-lucide="badge-info" class="list-icon"></i><span>ISBN and metadata guidance</span></li>
+                        <li><i data-lucide="settings" class="list-icon"></i><span>Publishing platform setup</span></li>
+                        <li><i data-lucide="ruler" class="list-icon"></i><span>Print specification review</span></li>
+                        <li><i data-lucide="search-check" class="list-icon"></i><span>eProof quality check</span></li>
+                        <li><i data-lucide="globe-2" class="list-icon"></i><span>Retail distribution setup</span></li>
+                        <li><i data-lucide="handshake" class="list-icon"></i><span>Publication support</span></li>
                     </ul>
 
                     <a href="#contact" class="button-secondary">
@@ -619,6 +893,10 @@
 
 
                 <article class="package featured">
+
+                    <div class="service-icon" aria-hidden="true">
+                        <i data-lucide="badge-check"></i>
+                    </div>
 
                     <div class="package-label">Best Value</div>
 
@@ -633,16 +911,16 @@
                     <div class="price-note">Publishing Essentials + Custom Cover Design + Author Website.</div>
                     <div class="bundle-saving">Save C$98 compared with individual services</div>
 
-                    <ul>
-                        <li>Everything in Publishing Essentials</li>
-                        <li>Custom cover design</li>
-                        <li>Professional author website</li>
-                        <li>Author biography page</li>
-                        <li>Dedicated book landing page</li>
-                        <li>Retail purchase links</li>
-                        <li>Bookseller and librarian information</li>
-                        <li>Custom domain connection</li>
-                        <li>Basic search engine metadata</li>
+                    <ul class="package-list">
+                        <li><i data-lucide="circle-check" class="list-icon"></i><span>Everything in Publishing Essentials</span></li>
+                        <li><i data-lucide="pen-tool" class="list-icon"></i><span>Custom cover design</span></li>
+                        <li><i data-lucide="monitor" class="list-icon"></i><span>Professional author website</span></li>
+                        <li><i data-lucide="user-round" class="list-icon"></i><span>Author biography page</span></li>
+                        <li><i data-lucide="layout-template" class="list-icon"></i><span>Dedicated book landing page</span></li>
+                        <li><i data-lucide="shopping-bag" class="list-icon"></i><span>Retail purchase links</span></li>
+                        <li><i data-lucide="library-big" class="list-icon"></i><span>Bookseller and librarian information</span></li>
+                        <li><i data-lucide="globe" class="list-icon"></i><span>Custom domain connection</span></li>
+                        <li><i data-lucide="search" class="list-icon"></i><span>Basic search engine metadata</span></li>
                     </ul>
 
                     <a href="#contact" class="button-primary">
@@ -679,6 +957,9 @@
             <div class="steps">
 
                 <div class="step">
+                    <div class="step-icon" aria-hidden="true">
+                        <i data-lucide="file-up"></i>
+                    </div>
                     <div class="step-number">01</div>
                     <h3>Submit</h3>
                     <p>
@@ -688,6 +969,9 @@
                 </div>
 
                 <div class="step">
+                    <div class="step-icon" aria-hidden="true">
+                        <i data-lucide="settings-2"></i>
+                    </div>
                     <div class="step-number">02</div>
                     <h3>Prepare</h3>
                     <p>
@@ -697,6 +981,9 @@
                 </div>
 
                 <div class="step">
+                    <div class="step-icon" aria-hidden="true">
+                        <i data-lucide="search-check"></i>
+                    </div>
                     <div class="step-number">03</div>
                     <h3>Review</h3>
                     <p>
@@ -706,6 +993,9 @@
                 </div>
 
                 <div class="step">
+                    <div class="step-icon" aria-hidden="true">
+                        <i data-lucide="book-check"></i>
+                    </div>
                     <div class="step-number">04</div>
                     <h3>Publish</h3>
                     <p>
@@ -739,6 +1029,7 @@
             <div class="add-ons-grid">
 
                 <article class="add-on-card">
+                    <div class="addon-icon" aria-hidden="true"><i data-lucide="monitor-smartphone"></i></div>
                     <div class="package-label">Author Presence</div>
                     <h3>Author Website</h3>
                     <p>
@@ -750,6 +1041,7 @@
                 </article>
 
                 <article class="add-on-card">
+                    <div class="addon-icon" aria-hidden="true"><i data-lucide="pen-tool"></i></div>
                     <div class="package-label">Design</div>
                     <h3>Custom Cover Design</h3>
                     <p>
@@ -761,6 +1053,7 @@
                 </article>
 
                 <article class="add-on-card">
+                    <div class="addon-icon" aria-hidden="true"><i data-lucide="mic-2"></i></div>
                     <div class="package-label">Audio Edition</div>
                     <h3>Audiobook Edition</h3>
                     <p>
@@ -772,6 +1065,7 @@
                 </article>
 
                 <article class="add-on-card">
+                    <div class="addon-icon" aria-hidden="true"><i data-lucide="languages"></i></div>
                     <div class="package-label">International Editions</div>
                     <h3>Language Edition</h3>
                     <p>
@@ -790,13 +1084,13 @@
                         <span class="language-tag">French</span>
                     </div>
 
-                    <ul>
-                        <li>Translation and language adaptation</li>
-                        <li>Language editing and terminology consistency</li>
-                        <li>Title and subtitle adaptation</li>
-                        <li>Book description and metadata</li>
-                        <li>Paperback and ebook formatting</li>
-                        <li>Publication and distribution setup</li>
+                    <ul class="addon-list">
+                        <li><i data-lucide="languages" class="list-icon"></i><span>Translation and language adaptation</span></li>
+                        <li><i data-lucide="spell-check-2" class="list-icon"></i><span>Language editing and terminology consistency</span></li>
+                        <li><i data-lucide="type" class="list-icon"></i><span>Title and subtitle adaptation</span></li>
+                        <li><i data-lucide="file-text" class="list-icon"></i><span>Book description and metadata</span></li>
+                        <li><i data-lucide="book-copy" class="list-icon"></i><span>Paperback and ebook formatting</span></li>
+                        <li><i data-lucide="globe-2" class="list-icon"></i><span>Publication and distribution setup</span></li>
                     </ul>
                 </article>
 
@@ -861,6 +1155,12 @@
 
     </div>
 </footer>
+
+
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script>
+    lucide.createIcons();
+</script>
 
 </body>
 </html>
