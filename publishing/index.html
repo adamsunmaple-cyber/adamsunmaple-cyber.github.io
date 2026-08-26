@@ -293,6 +293,60 @@
             font-size: 31px;
         }
 
+
+        .offer-tag {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            margin-top: 22px;
+            padding: 5px 9px;
+            border: 1px solid #c7ab78;
+            background: #f3ecdf;
+            color: #8b6a35;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .price-line {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 10px 0 4px;
+        }
+
+        .regular-price {
+            color: #9a958c;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 19px;
+            text-decoration: line-through;
+            text-decoration-thickness: 1.5px;
+            text-decoration-color: #918b81;
+        }
+
+        .sale-price {
+            color: var(--ink);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 34px;
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        .savings-line {
+            color: #8b6a35;
+            font-size: 13px;
+            font-weight: 700;
+            margin: 3px 0 8px;
+        }
+
+        .pricing-context {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
         .price-note {
             color: var(--muted);
             font-size: 13px;
@@ -895,6 +949,9 @@
                     or choose the Complete Publishing Package for a finished author presence
                     with custom cover design and an author website.
                 </p>
+                <p style="margin-top: 14px; font-size: 14px; color: #8b6a35; font-weight: 600;">
+                    Introductory pricing is currently available for new publishing projects.
+                </p>
             </div>
 
             <div class="packages">
@@ -914,7 +971,12 @@
                         prepared paperback and ebook ready for publication and distribution.
                     </p>
 
-                    <div class="price">From C$899</div>
+                    <div class="offer-tag">Introductory Offer</div>
+                    <div class="price-line">
+                        <span class="regular-price">C$1,299</span>
+                        <span class="sale-price">From C$899</span>
+                    </div>
+                    <div class="savings-line">Save C$400 now</div>
                     <div class="price-note">Includes one paperback edition and one ebook edition.</div>
 
                     <ul class="package-list">
@@ -950,9 +1012,14 @@
                         their book, cover, and professional online presence prepared together.
                     </p>
 
-                    <div class="price">C$1,699</div>
+                    <div class="offer-tag">Introductory Offer</div>
+                    <div class="price-line">
+                        <span class="regular-price">C$2,099</span>
+                        <span class="sale-price">C$1,699</span>
+                    </div>
+                    <div class="savings-line">Save C$400 now</div>
                     <div class="price-note">Publishing Essentials + Custom Cover Design + Author Website.</div>
-                    <div class="bundle-saving">Save C$98 compared with individual services</div>
+                    <div class="pricing-context">Standard package pricing already includes bundled savings.</div>
 
                     <ul class="package-list">
                         <li><i data-lucide="circle-check" class="list-icon"></i><span>Everything in Publishing Essentials</span></li>
