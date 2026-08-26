@@ -32,7 +32,13 @@
 
         body {
             margin: 0;
-            background: var(--paper);
+            background:
+                radial-gradient(
+                    circle at 85% 8%,
+                    rgba(168, 131, 71, 0.07),
+                    transparent 30%
+                ),
+                var(--paper);
             color: var(--ink);
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
@@ -57,14 +63,16 @@
 
         header {
             border-bottom: 1px solid var(--line);
-            background: rgba(247, 244, 237, 0.96);
+            background: rgba(247, 244, 237, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 10;
         }
 
         .nav {
-            min-height: 74px;
+            min-height: 88px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -79,10 +87,11 @@
 
         .brand-logo {
             display: block;
-            width: auto;
-            height: 52px;
-            max-width: 240px;
-            object-fit: contain;
+            width: 270px;
+            height: 72px;
+            max-width: none;
+            object-fit: cover;
+            object-position: center 52%;
         }
 
         .nav-links {
@@ -115,7 +124,19 @@
         }
 
         .hero {
+            position: relative;
             padding: 115px 0 105px;
+            background:
+                radial-gradient(
+                    circle at 78% 40%,
+                    rgba(168, 131, 71, 0.10),
+                    transparent 32%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f7f4ed 0%,
+                    #f3eee3 100%
+                );
         }
 
         .hero-inner {
@@ -157,6 +178,7 @@
             border-top: 1px solid var(--line);
             border-bottom: 1px solid var(--line);
             padding: 35px 0;
+            background: rgba(255, 255, 255, 0.35);
         }
 
         .intro-strip-inner {
@@ -196,6 +218,20 @@
             color: var(--muted);
             font-size: 18px;
             margin: 0;
+        }
+
+
+        #services {
+            background: #f4f0e7;
+        }
+
+        #add-ons {
+            background:
+                linear-gradient(
+                    180deg,
+                    #f7f4ed 0%,
+                    #f1ece2 100%
+                );
         }
 
         .packages {
@@ -392,6 +428,12 @@
 
         .for-authors {
             border-top: 1px solid var(--line);
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0.15) 0%,
+                    rgba(255, 255, 255, 0.42) 100%
+                );
         }
 
         .cta {
@@ -658,8 +700,11 @@
             }
 
             .brand-logo {
-                height: 44px;
-                max-width: 190px;
+                width: 215px;
+                height: 58px;
+                max-width: none;
+                object-fit: cover;
+                object-position: center 52%;
             }
 
             .hero {
@@ -702,6 +747,8 @@
         </a>
 
         <nav class="nav-links">
+            <a href="./" aria-label="English version">EN</a>
+            <a href="./zh/" aria-label="Chinese version">中文</a>
             <a href="#publications">Publications</a>
             <a href="#services">Services</a>
             <a href="#process">How It Works</a>
@@ -794,7 +841,7 @@
                         </div>
 
                         <img
-                            src="publication-1.png"
+                            src="publication-1.jpg"
                             alt="Publication 1 book cover"
                             onerror="this.style.display='none';"
                         >
@@ -827,10 +874,6 @@
                     </div>
                 </article>
 
-            </div>
-
-            <div class="publication-note">
-                Replace publication-1.jpg and publication-2.jpg with your book cover images.
             </div>
 
         </div>
