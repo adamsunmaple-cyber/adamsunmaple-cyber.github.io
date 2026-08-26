@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Adam Sun Publishing | Independent Publishing Services</title>
+
+    <meta
+        name="description"
+        content="Adam Sun Publishing helps authors bring books to market through professional publishing, author websites, and English-language editions."
+    >
+
+    <style>
+        :root {
+            --ink: #1c1c1a;
+            --muted: #6e6b64;
+            --paper: #f7f4ed;
+            --white: #ffffff;
+            --gold: #a88347;
+            --line: #ded9ce;
+            --soft: #eee9de;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        .brand {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 1px solid var(--line);
+            background: rgba(247, 244, 237, 0.96);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav {
+            min-height: 74px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .brand {
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 14px;
+        }
+
+        .nav-button,
+        .button-primary {
+            display: inline-block;
+            background: var(--ink);
+            color: var(--white);
+            padding: 12px 19px;
+            border-radius: 2px;
+            transition: 0.2s ease;
+        }
+
+        .nav-button:hover,
+        .button-primary:hover {
+            opacity: 0.84;
+        }
+
+        .button-secondary {
+            display: inline-block;
+            border: 1px solid var(--ink);
+            padding: 11px 19px;
+            border-radius: 2px;
+        }
+
+        .hero {
+            padding: 115px 0 105px;
+        }
+
+        .hero-inner {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2.2px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(46px, 7vw, 78px);
+            line-height: 1.02;
+            font-weight: 500;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 20px;
+            margin: 30px 0;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .intro-strip {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 35px 0;
+        }
+
+        .intro-strip-inner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .intro-item strong {
+            display: block;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .intro-item span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            max-width: 730px;
+            margin-bottom: 55px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 500;
+            margin: 0 0 15px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .package {
+            background: var(--white);
+            border: 1px solid var(--line);
+            padding: 34px;
+            display: flex;
+            flex-direction: column;
+            min-height: 610px;
+        }
+
+        .package.featured {
+            border-top: 4px solid var(--gold);
+        }
+
+        .package-label {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 12px;
+            font-weight: 700;
+            min-height: 22px;
+        }
+
+        .package h3 {
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 1.15;
+            margin: 15px 0;
+        }
+
+        .package-description {
+            color: var(--muted);
+            min-height: 82px;
+        }
+
+        .price {
+            margin: 25px 0 8px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 31px;
+        }
+
+        .price-note {
+            color: var(--muted);
+            font-size: 13px;
+            min-height: 22px;
+        }
+
+        .package ul {
+            padding: 0;
+            margin: 28px 0 35px;
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .package li {
+            border-top: 1px solid var(--soft);
+            padding: 11px 0;
+            font-size: 14px;
+        }
+
+        .package li::before {
+            content: "—";
+            color: var(--gold);
+            margin-right: 9px;
+        }
+
+        .package .button-primary,
+        .package .button-secondary {
+            text-align: center;
+        }
+
+        .process {
+            background: var(--ink);
+            color: var(--white);
+        }
+
+        .process .eyebrow {
+            color: #d3b782;
+        }
+
+        .process .section-heading p {
+            color: #c5c2bb;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .step-number {
+            color: #d3b782;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            font-size: 23px;
+            font-weight: 500;
+            margin: 0 0 9px;
+        }
+
+        .step p {
+            color: #c5c2bb;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .translation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .translation h2 {
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 500;
+            line-height: 1.1;
+            margin: 0 0 20px;
+        }
+
+        .translation p {
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .translation-box {
+            background: var(--white);
+            border: 1px solid var(--line);
+            padding: 42px;
+        }
+
+        .translation-box h3 {
+            font-size: 25px;
+            margin-top: 0;
+        }
+
+        .translation-box ul {
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        .for-authors {
+            border-top: 1px solid var(--line);
+        }
+
+        .cta {
+            background: var(--white);
+            border: 1px solid var(--line);
+            padding: 65px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            font-weight: 500;
+            margin: 0 0 10px;
+        }
+
+        .cta p {
+            color: var(--muted);
+            margin: 0;
+            max-width: 620px;
+        }
+
+        footer {
+            padding: 45px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .footer-brand {
+            color: var(--ink);
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        @media (max-width: 900px) {
+            .packages,
+            .steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .translation {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-strip-inner {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .nav-links a:not(.nav-button) {
+                display: none;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .packages,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .package {
+                min-height: auto;
+            }
+
+            .cta,
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cta {
+                padding: 38px 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+        <a href="#" class="brand">ADAM SUN PUBLISHING</a>
+
+        <nav class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#process">How It Works</a>
+            <a href="#english-edition">English Editions</a>
+            <a href="#contact" class="nav-button">Start a Project</a>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+
+                <div class="eyebrow">
+                    Independent Publishing · Edmonton, Canada
+                </div>
+
+                <h1>
+                    Your manuscript deserves a life beyond the draft.
+                </h1>
+
+                <p>
+                    Adam Sun Publishing helps independent authors turn completed
+                    manuscripts into professionally published books — from print
+                    and ebook distribution to author websites and English-language editions.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#services" class="button-primary">
+                        Explore Publishing Packages
+                    </a>
+
+                    <a href="#contact" class="button-secondary">
+                        Discuss Your Book
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="intro-strip">
+        <div class="container intro-strip-inner">
+
+            <div class="intro-item">
+                <strong>Print & Ebook</strong>
+                <span>Publication-ready editions for major distribution channels.</span>
+            </div>
+
+            <div class="intro-item">
+                <strong>Global Distribution</strong>
+                <span>Books prepared for availability through established retail networks.</span>
+            </div>
+
+            <div class="intro-item">
+                <strong>Author Ownership</strong>
+                <span>Your name, your book, your long-term publishing identity.</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <section id="services">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="eyebrow">Publishing Services</div>
+
+                <h2>
+                    Choose the level of support your book needs.
+                </h2>
+
+                <p>
+                    From a finished manuscript ready for publication to a complete
+                    English-language edition, each package is designed around a clear
+                    publishing goal.
+                </p>
+            </div>
+
+
+            <div class="packages">
+
+                <article class="package">
+
+                    <div class="package-label">Essential</div>
+
+                    <h3>Publishing Essentials</h3>
+
+                    <p class="package-description">
+                        For authors with a completed manuscript who want a professionally
+                        prepared book ready for publication and distribution.
+                    </p>
+
+                    <div class="price">From C$499</div>
+                    <div class="price-note">Final price depends on book complexity.</div>
+
+                    <ul>
+                        <li>Print-ready interior preparation</li>
+                        <li>Ebook preparation</li>
+                        <li>ISBN and metadata guidance</li>
+                        <li>Publishing platform setup</li>
+                        <li>Print specification review</li>
+                        <li>eProof quality check</li>
+                        <li>Retail distribution setup</li>
+                        <li>Publication support</li>
+                    </ul>
+
+                    <a href="#contact" class="button-secondary">
+                        Start Publishing
+                    </a>
+
+                </article>
+
+
+                <article class="package featured">
+
+                    <div class="package-label">Most Popular</div>
+
+                    <h3>Publishing + Author Website</h3>
+
+                    <p class="package-description">
+                        Everything needed to publish your book, plus a professional
+                        online presence that readers, booksellers, and librarians can find.
+                    </p>
+
+                    <div class="price">From C$899</div>
+                    <div class="price-note">Includes publishing and web setup.</div>
+
+                    <ul>
+                        <li>Everything in Publishing Essentials</li>
+                        <li>Professional author website</li>
+                        <li>Author biography page</li>
+                        <li>Dedicated book landing page</li>
+                        <li>Book cover and description presentation</li>
+                        <li>Retail purchase links</li>
+                        <li>Bookseller and librarian information</li>
+                        <li>Custom domain connection</li>
+                        <li>Basic search engine metadata</li>
+                    </ul>
+
+                    <a href="#contact" class="button-primary">
+                        Build Your Author Presence
+                    </a>
+
+                </article>
+
+
+                <article class="package">
+
+                    <div class="package-label">International</div>
+
+                    <h3>English Edition</h3>
+
+                    <p class="package-description">
+                        For authors who want to bring an existing non-English manuscript
+                        to English-language readers and international distribution.
+                    </p>
+
+                    <div class="price">Custom Quote</div>
+
+                    <div class="price-note">
+                        Based on manuscript length and editorial requirements.
+                    </div>
+
+                    <ul>
+                        <li>Manuscript evaluation</li>
+                        <li>English translation</li>
+                        <li>English-language editing</li>
+                        <li>Naturalization for English readers</li>
+                        <li>Title and subtitle consultation</li>
+                        <li>English book description</li>
+                        <li>English metadata preparation</li>
+                        <li>Print and ebook formatting</li>
+                        <li>Publication and distribution setup</li>
+                    </ul>
+
+                    <a href="#contact" class="button-secondary">
+                        Request an English Edition Quote
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="process" id="process">
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">How It Works</div>
+
+                <h2>
+                    A straightforward path from manuscript to published book.
+                </h2>
+
+                <p>
+                    Every project begins with the manuscript and ends with a book
+                    that is ready to reach readers.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Submit</h3>
+                    <p>
+                        Send your manuscript and tell us what you want to achieve
+                        with the book.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Prepare</h3>
+                    <p>
+                        We review the files, publishing requirements, metadata,
+                        formatting, and distribution needs.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Review</h3>
+                    <p>
+                        You receive publication-ready materials and review the
+                        final edition before release.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h3>Publish</h3>
+                    <p>
+                        The finished book is prepared for publication and
+                        distribution through selected channels.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="english-edition">
+        <div class="container translation">
+
+            <div>
+
+                <div class="eyebrow">
+                    English-Language Publishing
+                </div>
+
+                <h2>
+                    More than translating words.
+                </h2>
+
+                <p>
+                    A book written for one language often needs more than literal
+                    translation to work for readers in another.
+                </p>
+
+                <p>
+                    Our English Edition service focuses on preserving the author's
+                    ideas and voice while creating clear, natural English suitable
+                    for publication.
+                </p>
+
+                <p>
+                    The result is prepared as an English-language book rather than
+                    simply a translated manuscript.
+                </p>
+
+            </div>
+
+
+            <div class="translation-box">
+
+                <h3>English Edition may include</h3>
+
+                <ul>
+                    <li>Translation and language adaptation</li>
+                    <li>Removal of literal translation patterns</li>
+                    <li>Terminology consistency</li>
+                    <li>Editorial restructuring where appropriate</li>
+                    <li>English title and subtitle development</li>
+                    <li>Book description and author biography</li>
+                    <li>International publishing metadata</li>
+                    <li>Print and ebook publication</li>
+                </ul>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="for-authors" id="contact">
+        <div class="container">
+
+            <div class="cta">
+
+                <div>
+                    <h2>Have a manuscript ready?</h2>
+
+                    <p>
+                        Tell us about your book, manuscript length, language,
+                        and publishing goals. We will recommend the most appropriate
+                        publishing path.
+                    </p>
+                </div>
+
+                <a
+                    href="mailto:info@adamsunpublishing.com"
+                    class="button-primary"
+                >
+                    Start a Conversation
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="container footer-inner">
+
+        <div>
+            <div class="footer-brand">ADAM SUN PUBLISHING</div>
+            <div>Edmonton, Alberta, Canada</div>
+        </div>
+
+        <div>
+            © 2026 Adam Sun Publishing. All rights reserved.
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
