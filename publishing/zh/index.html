@@ -32,10 +32,14 @@
 
         body {
             margin: 0;
-            background: var(--paper);
-            color: var(--ink);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Arial, Helvetica, sans-serif;
-            line-height: 1.6;
+    background:
+        radial-gradient(
+            circle at 85% 8%,
+            rgba(168, 131, 71, 0.07),
+            transparent 30%
+        ),
+        var(--paper);
+    color: var(--ink);
         }
 
         h1,
@@ -64,7 +68,7 @@
         }
 
         .nav {
-            min-height: 74px;
+            min-height: 88px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -79,10 +83,11 @@
 
         .brand-logo {
             display: block;
-            width: auto;
-            height: 52px;
-            max-width: 240px;
-            object-fit: contain;
+            width: 270px;
+            height: 72px;
+            max-width: none;
+            object-fit: cover;
+            object-position: center 52%;
         }
 
         .nav-links {
@@ -115,7 +120,19 @@
         }
 
         .hero {
-            padding: 115px 0 105px;
+            position: relative;
+    padding: 115px 0 105px;
+    background:
+        radial-gradient(
+            circle at 78% 40%,
+            rgba(168, 131, 71, 0.10),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #f7f4ed 0%,
+            #f3eee3 100%
+        );
         }
 
         .hero-inner {
@@ -658,8 +675,11 @@
             }
 
             .brand-logo {
-                height: 44px;
-                max-width: 190px;
+                width: 215px;
+                height: 58px;
+                max-width: none;
+                object-fit: cover;
+                object-position: center 52%;
             }
 
             .hero {
@@ -913,9 +933,7 @@
                         <li><i data-lucide="user-round" class="list-icon"></i><span>作者简介页面</span></li>
                         <li><i data-lucide="layout-template" class="list-icon"></i><span>独立图书展示页面</span></li>
                         <li><i data-lucide="shopping-bag" class="list-icon"></i><span>零售购买链接</span></li>
-                        <li><i data-lucide="library-big" class="list-icon"></i><span>书商与图书馆信息页面</span></li>
                         <li><i data-lucide="globe" class="list-icon"></i><span>自定义域名连接</span></li>
-                        <li><i data-lucide="search" class="list-icon"></i><span>基础搜索引擎优化信息</span></li>
                     </ul>
 
                     <a href="#contact" class="button-primary">
