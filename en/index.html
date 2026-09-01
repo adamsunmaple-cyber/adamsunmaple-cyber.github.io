@@ -145,6 +145,59 @@
             white-space: nowrap;
         }
 
+
+        .print-regions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .print-region-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .print-region-title {
+            margin: 0;
+            color: #776b5e;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .print-store-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .print-store-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 9px;
+            border: 1px solid #ded4c5;
+            border-radius: 18px;
+            color: #493826;
+            background: #fffdf9;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-decoration: none;
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .print-store-link:hover {
+            background: #eee4d5;
+            box-shadow: 0 3px 8px rgba(55, 42, 28, 0.10);
+            transform: translateY(-1px);
+        }
+
         body {
             margin: 0;
             font-family:
@@ -494,46 +547,81 @@
                             </div>
                         </div>
                     </article>
-
                     <article class="purchase-card print-card">
                         <div class="category-label">PRINT EDITION</div>
                         <h5>Print Book</h5>
                         <p class="isbn-line">ISBN 9781067568733</p>
-                        <div class="store-links">
-            
-                                <a
-                                    class="store-button"
-                                    href="https://bookshop.org/books?keywords=9781067568733"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Bookshop.org print book"
-                                >
-                                    <span class="store-name">🇺🇸 Bookshop.org</span>
-                                    <span class="store-format">Print Book</span>
-                                </a>
-                            
-                                <a
-                                    class="store-button"
-                                    href="https://www.exlibris.ch/de/suche/?q=9781067568733"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Ex Libris Switzerland print book"
-                                >
-                                    <span class="store-name">🇨🇭 Ex Libris</span>
-                                    <span class="store-format">Print Book</span>
-                                </a>
-                            
-                                <a
-                                    class="store-button"
-                                    href="https://www.adlibris.com/sv-FI/bok/the-birth-of-rome-9781067568733"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Adlibris print book"
-                                >
-                                    <span class="store-name">🇸🇪 Adlibris</span>
-                                    <span class="store-format">Print Book</span>
-                                </a>
-                 
+
+                        <div class="print-regions">
+                            <div class="print-region-group">
+                                <div class="print-region-title">North America</div>
+                                <div class="print-store-list">
+                                    <a
+                                        class="print-store-link"
+                                        href="https://bookshop.org/p/books/the-birth-of-rome-from-legendary-origins-to-the-conquest-of-italy/3fde45958f30aa9d"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Bookshop.org United States print book"
+                                    >
+                                        <span>🇺🇸</span>
+                                        <span>Bookshop.org</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="print-region-group">
+                                <div class="print-region-title">Europe</div>
+                                <div class="print-store-list">
+                                    <a
+                                        class="print-store-link"
+                                        href="https://www.exlibris.ch/de/buecher-buch/english-books/adam-sun/the-birth-of-rome/id/9781067568733/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Ex Libris Switzerland print book"
+                                    >
+                                        <span>🇨🇭</span>
+                                        <span>Ex Libris</span>
+                                    </a>
+
+                                    <a
+                                        class="print-store-link"
+                                        href="https://www.adlibris.com/sv-FI/bok/the-birth-of-rome-9781067568733"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Adlibris Sweden print book"
+                                    >
+                                        <span>🇸🇪</span>
+                                        <span>Adlibris</span>
+                                    </a>
+
+                                    <a
+                                        class="print-store-link"
+                                        href="https://www.morawa.at/detail/ISBN-9781067568733/Sun-Adam/The-Birth-of-Rome"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Morawa Austria print book"
+                                    >
+                                        <span>🇦🇹</span>
+                                        <span>Morawa</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="print-region-group">
+                                <div class="print-region-title">Asia</div>
+                                <div class="print-store-list">
+                                    <a
+                                        class="print-store-link"
+                                        href="https://www.yes24.com/product/goods/195801694"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="YES24 South Korea print book"
+                                    >
+                                        <span>🇰🇷</span>
+                                        <span>YES24</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </article>
 
