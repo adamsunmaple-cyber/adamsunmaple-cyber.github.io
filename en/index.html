@@ -115,7 +115,31 @@
         .region-button:hover {
             background: #eee4d5;
         }
-
+        .flag {
+            display: inline-block;
+            width: 18px;
+            height: 13px;
+            flex-shrink: 0;
+            border-radius: 1px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .flag-ca { background-image: url("https://flagcdn.com/ca.svg"); }
+        .flag-us { background-image: url("https://flagcdn.com/us.svg"); }
+        .flag-gb { background-image: url("https://flagcdn.com/gb.svg"); }
+        .flag-de { background-image: url("https://flagcdn.com/de.svg"); }
+        .flag-fr { background-image: url("https://flagcdn.com/fr.svg"); }
+        .flag-es { background-image: url("https://flagcdn.com/es.svg"); }
+        .flag-it { background-image: url("https://flagcdn.com/it.svg"); }
+        .flag-jp { background-image: url("https://flagcdn.com/jp.svg"); }
+        .flag-au { background-image: url("https://flagcdn.com/au.svg"); }
+        .flag-ch { background-image: url("https://flagcdn.com/ch.svg"); }
+        .flag-se { background-image: url("https://flagcdn.com/se.svg"); }
+        .flag-at { background-image: url("https://flagcdn.com/at.svg"); }
+        .flag-nl { background-image: url("https://flagcdn.com/nl.svg"); }
+        .flag-kr { background-image: url("https://flagcdn.com/kr.svg"); }
         .store-button {
             display: flex;
             align-items: center;
@@ -533,17 +557,91 @@
                          
                             </a>
 
-                            <div class="amazon-region-title">Choose your Amazon store</div>
+                          <div class="amazon-region-title">Choose your Amazon store</div>
+
                             <div class="amazon-regions">
-                                <a class="region-button" href="https://www.amazon.ca/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Canada Kindle ebook"><span>🇨🇦</span><span>Canada</span></a>
-                                <a class="region-button" href="https://www.amazon.com/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon United States Kindle ebook"><span>🇺🇸</span><span>US</span></a>
-                                <a class="region-button" href="https://www.amazon.co.uk/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon United Kingdom Kindle ebook"><span>🇬🇧</span><span>UK</span></a>
-                                <a class="region-button" href="https://www.amazon.de/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Germany Kindle ebook"><span>🇩🇪</span><span>Germany</span></a>
-                                <a class="region-button" href="https://www.amazon.fr/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon France Kindle ebook"><span>🇫🇷</span><span>France</span></a>
-                                <a class="region-button" href="https://www.amazon.es/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Spain Kindle ebook"><span>🇪🇸</span><span>Spain</span></a>
-                                <a class="region-button" href="https://www.amazon.it/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Italy Kindle ebook"><span>🇮🇹</span><span>Italy</span></a>
-                                <a class="region-button" href="https://www.amazon.co.jp/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Japan Kindle ebook"><span>🇯🇵</span><span>Japan</span></a>
-                                <a class="region-button" href="https://www.amazon.com.au/dp/B0HG683TY3" target="_blank" rel="noopener noreferrer" aria-label="Amazon Australia Kindle ebook"><span>🇦🇺</span><span>Australia</span></a>
+                            
+                                <a class="region-button"
+                                   href="https://www.amazon.ca/dp/B0HG683TY3"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Amazon Canada Kindle ebook">
+                                    <span class="flag flag-ca"></span>
+                                    <span>Canada</span>
+                                </a>
+                            
+                                <a class="region-button"
+                                   href="https://www.amazon.com/dp/B0HG683TY3"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Amazon United States Kindle ebook">
+                                    <span class="flag flag-us"></span>
+                                    <span>US</span>
+                                </a>
+                            
+                                <a class="region-button"
+                                   href="https://www.amazon.co.uk/dp/B0HG683TY3"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Amazon United Kingdom Kindle ebook">
+                                    <span class="flag flag-gb"></span>
+                                    <span>UK</span>
+                                </a>
+                            
+                                <a class="region-button"
+                                   href="https://www.amazon.de/dp/B0HG683TY3"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Amazon Germany Kindle ebook">
+                                    <span class="flag flag-de"></span>
+                                    <span>Germany</span>
+                                </a>
+                            
+                                <a class="region-button"
+                                   href="https://www.amazon.fr/dp/B0HG683TY3"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Amazon France Kindle ebook">
+                                    <span class="flag flag-fr"></span>
+                                    <span>France</span>
+                                </a>
+                            
+                                <a class="region-button"
+                                   href="https://www.amazon.es/dp/B0HG683TY3"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Amazon Spain Kindle ebook">
+                                    <span class="flag flag-es"></span>
+                                    <span>Spain</span>
+                                </a>
+                            
+                                <a class="region-button"
+                                   href="https://www.amazon.it/dp/B0HG683TY3"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Amazon Italy Kindle ebook">
+                                    <span class="flag flag-it"></span>
+                                    <span>Italy</span>
+                                </a>
+                            
+                                <a class="region-button"
+                                   href="https://www.amazon.co.jp/dp/B0HG683TY3"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Amazon Japan Kindle ebook">
+                                    <span class="flag flag-jp"></span>
+                                    <span>Japan</span>
+                                </a>
+                            
+                                <a class="region-button"
+                                   href="https://www.amazon.com.au/dp/B0HG683TY3"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Amazon Australia Kindle ebook">
+                                    <span class="flag flag-au"></span>
+                                    <span>Australia</span>
+                                </a>
+                            
                             </div>
                         </div>
                     </article>
@@ -563,7 +661,7 @@
                                         rel="noopener noreferrer"
                                         aria-label="Bookshop.org United States print book"
                                     >
-                                        <span>🇺🇸</span>
+                                        <span class="flag flag-us"></span>
                                         <span>Bookshop.org</span>
                                     </a>
 
@@ -574,7 +672,7 @@
                                         rel="noopener noreferrer"
                                         aria-label="Barnes and Noble United States print book"
                                     >
-                                        <span>🇺🇸</span>
+                                        <span class="flag flag-us"></span>
                                         <span>Barnes &amp; Noble</span>
                                     </a>
 
@@ -585,7 +683,7 @@
                                         rel="noopener noreferrer"
                                         aria-label="Books-A-Million United States print book"
                                     >
-                                        <span>🇺🇸</span>
+                                        <span class="flag flag-us"></span>
                                         <span>Books-A-Million</span>
                                     </a>
                                 </div>
@@ -601,7 +699,7 @@
                                         rel="noopener noreferrer"
                                         aria-label="Ex Libris Switzerland print book"
                                     >
-                                        <span>🇨🇭</span>
+                                        <span class="flag flag-ch"></span>
                                         <span>Ex Libris</span>
                                     </a>
 
@@ -612,7 +710,7 @@
                                         rel="noopener noreferrer"
                                         aria-label="Adlibris Sweden print book"
                                     >
-                                        <span>🇸🇪</span>
+                                        <span class="flag flag-se"></span>
                                         <span>Adlibris</span>
                                     </a>
 
@@ -623,7 +721,7 @@
                                         rel="noopener noreferrer"
                                         aria-label="Morawa Austria print book"
                                     >
-                                        <span>🇦🇹</span>
+                                        <span class="flag flag-at"></span>
                                         <span>Morawa</span>
                                     </a>
 
@@ -634,7 +732,7 @@
                                         rel="noopener noreferrer"
                                         aria-label="Donner Netherlands print book"
                                     >
-                                        <span>🇳🇱</span>
+                                        <span class="flag flag-nl"></span>
                                         <span>Donner</span>
                                     </a>
 
@@ -645,7 +743,7 @@
                                         rel="noopener noreferrer"
                                         aria-label="Foyles United Kingdom print book"
                                     >
-                                        <span>🇬🇧</span>
+                                        <span class="flag flag-gb"></span>
                                         <span>Foyles</span>
                                     </a>
 
@@ -656,7 +754,7 @@
                                         rel="noopener noreferrer"
                                         aria-label="Akademibokhandeln Sweden print book"
                                     >
-                                        <span>🇸🇪</span>
+                                        <span class="flag flag-se"></span>
                                         <span>Akademibokhandeln</span>
                                     </a>
                                 </div>
@@ -672,7 +770,7 @@
                                         rel="noopener noreferrer"
                                         aria-label="Booktopia Australia print book"
                                     >
-                                        <span>🇦🇺</span>
+                                        <span class="flag flag-au"></span>
                                         <span>Booktopia</span>
                                     </a>
                                 </div>
@@ -688,7 +786,7 @@
                                         rel="noopener noreferrer"
                                         aria-label="YES24 South Korea print book"
                                     >
-                                        <span>🇰🇷</span>
+                                        <span class="flag flag-kr"></span>
                                         <span>YES24</span>
                                     </a>
                                 </div>
